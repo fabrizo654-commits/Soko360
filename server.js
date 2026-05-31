@@ -86,7 +86,7 @@ app.post('/api/orders', async (req, res) => {
         BusinessShortCode: SHORTCODE,
         Password:          password,
         Timestamp:         timestamp,
-        TransactionType:   'CustomerBuyGoodsOnline',
+        TransactionType:   'CustomerPayBillOnline',
         Amount:            Math.ceil(total),
         PartyA:            formattedPhone,
         PartyB:            SHORTCODE,
@@ -188,3 +188,4 @@ app.listen(PORT, () => {
   console.log(`   Environment: ${MPESA_ENV}`);
   console.log(`   Shortcode:   ${SHORTCODE}\n`);
 });
+      
