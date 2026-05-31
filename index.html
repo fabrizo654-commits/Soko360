@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mama Mboga — Fresh From the Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Nunito:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --green:#1A6B2F; --green2:#2D8A45; --lime:#7BC542;
+  --yellow:#F5C518; --orange:#F07D1A; --red:#D63B2F;
+  --brown:#5C3317; --cream:#FBF6ED; --offwhite:#F4EFE4;
+  --dark:#1C1208; --text:#2E1F0A; --muted:#7A6347;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Nunito',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+
+/* NAV */
+nav {
+  position:fixed; top:0; width:100%; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 48px; height:68px;
+  background:var(--green);
+  box-shadow:0 4px 24px rgba(26,107,47,0.25);
+}
+.logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.logo-icon { width:40px; height:40px; background:var(--yellow); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; }
+.logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:#fff; }
+.logo-text span { color:var(--yellow); }
+.logo-sub { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.6); }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:13px; font-weight:600; color:rgba(255,255,255,0.8); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover { color:var(--yellow); }
+.cart-pill {
+  display:flex; align-items:center; gap:8px;
+  background:var(--yellow); color:var(--dark);
+  border:none; border-radius:24px; padding:8px 20px;
+  font-family:'Syne',sans-serif; font-weight:700; font-size:13px;
+  cursor:pointer; transition:transform 0.2s;
+}
+.cart-pill:hover { transform:scale(1.04); }
+.cart-count { background:var(--red); color:#fff; border-radius:50%; width:20px; height:20px; font-size:11px; display:flex; align-items:center; justify-content:center; }
+
+/* HERO */
+.hero {
+  min-height:100vh; padding-top:68px;
+  display:grid; grid-template-columns:1fr 1fr;
+  background:linear-gradient(135deg,#0e4a1f 0%,#1a6b2f 50%,#2d8a45 100%);
+  position:relative; overflow:hidden;
+}
+.hero::before { content:''; position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(123,197,66,0.18),transparent 70%); top:-150px; right:100px; pointer-events:none; }
+.hero-left { display:flex; flex-direction:column; justify-content:center; padding:80px 60px 80px 72px; position:relative; z-index:2; }
+.hero-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(245,197,24,0.15); border:1px solid rgba(245,197,24,0.35); border-radius:24px; padding:6px 16px; width:fit-content; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--yellow); font-weight:700; margin-bottom:28px; animation:fadeUp 0.7s 0.1s both; }
+.hero-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(48px,5.5vw,80px); line-height:1.05; color:#fff; animation:fadeUp 0.7s 0.2s both; }
+.hero-title .y { color:var(--yellow); } .hero-title .l { color:var(--lime); }
+.hero-desc { margin-top:24px; font-size:16px; line-height:1.8; color:rgba(255,255,255,0.7); max-width:400px; animation:fadeUp 0.7s 0.35s both; }
+.hero-actions { display:flex; gap:16px; margin-top:40px; animation:fadeUp 0.7s 0.45s both; }
+.btn-hero { padding:15px 36px; border-radius:4px; font-family:'Syne',sans-serif; font-weight:700; font-size:13px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all 0.25s; border:2px solid transparent; }
+.btn-hero.p { background:var(--yellow); color:var(--dark); }
+.btn-hero.p:hover { background:#f0b800; transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,197,24,0.4); }
+.btn-hero.s { background:transparent; color:#fff; border-color:rgba(255,255,255,0.35); }
+.btn-hero.s:hover { border-color:#fff; transform:translateY(-2px); }
+.hero-stats { display:flex; gap:40px; margin-top:56px; animation:fadeUp 0.7s 0.55s both; }
+.stat-item { border-left:2px solid rgba(123,197,66,0.4); padding-left:16px; }
+.stat-num { font-family:'Syne',sans-serif; font-weight:800; font-size:28px; color:var(--lime); }
+.stat-label { font-size:12px; color:rgba(255,255,255,0.55); margin-top:2px; }
+.hero-right { display:flex; align-items:center; justify-content:center; padding:60px 40px; z-index:2; animation:fadeIn 1s 0.3s both; }
+.produce-float { position:relative; width:340px; height:400px; }
+.float-card { position:absolute; border-radius:20px; background:rgba(255,255,255,0.08); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.15); padding:20px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.2); }
+.fc1 { width:160px; top:0; left:0; animation:floatA 5s ease-in-out infinite; }
+.fc2 { width:170px; top:40px; right:0; animation:floatA 5s ease-in-out infinite 1.5s; }
+.fc3 { width:200px; bottom:0; left:50%; animation:floatB 5s ease-in-out infinite 0.8s; }
+.float-emoji { font-size:48px; margin-bottom:12px; display:block; }
+.float-name { font-family:'Syne',sans-serif; font-weight:700; font-size:14px; color:#fff; }
+.float-price { font-size:13px; color:var(--yellow); font-weight:600; margin-top:4px; }
+.float-badge { display:inline-block; background:var(--lime); color:var(--dark); font-size:9px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; border-radius:12px; padding:3px 10px; margin-top:8px; }
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+@keyframes floatB { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-14px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* TRUST BAR */
+.trust-bar { background:var(--yellow); padding:14px 0; overflow:hidden; white-space:nowrap; }
+.trust-track { display:inline-block; animation:marquee 20s linear infinite; }
+.trust-item { display:inline-flex; align-items:center; gap:8px; padding:0 36px; font-family:'Syne',sans-serif; font-weight:700; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dark); }
+.trust-dot { color:var(--green); font-size:18px; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* SECTION */
+.section { padding:80px 72px; position:relative; z-index:1; }
+.sec-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
+.sec-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--green2); font-weight:700; margin-bottom:10px; }
+.sec-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(28px,3.5vw,44px); color:var(--dark); line-height:1.1; }
+.sec-title em { font-style:italic; font-family:'Playfair Display',serif; color:var(--green); }
+.sec-link { font-family:'Syne',sans-serif; font-weight:700; font-size:13px; color:var(--green); text-decoration:none; border-bottom:2px solid var(--lime); padding-bottom:2px; }
+
+/* CATEGORIES */
+.categories { background:var(--offwhite); }
+.cats-row { display:flex; gap:16px; overflow-x:auto; padding-bottom:8px; }
+.cats-row::-webkit-scrollbar { height:4px; } .cats-row::-webkit-scrollbar-thumb { background:var(--lime); border-radius:2px; }
+.cat-chip { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:10px; padding:20px 28px; background:#fff; border:2px solid transparent; border-radius:16px; cursor:pointer; transition:all 0.25s; min-width:110px; }
+.cat-chip:hover, .cat-chip.active { border-color:var(--green); background:var(--green); }
+.cat-chip:hover .cat-chip-name, .cat-chip.active .cat-chip-name { color:#fff; }
+.cat-emoji-wrap { width:52px; height:52px; border-radius:50%; background:var(--offwhite); display:flex; align-items:center; justify-content:center; font-size:26px; transition:background 0.25s; }
+.cat-chip-name { font-family:'Syne',sans-serif; font-weight:700; font-size:12px; color:var(--dark); transition:color 0.25s; }
+
+/* PRODUCTS */
+.products-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.prod-card { background:#fff; border-radius:16px; overflow:hidden; border:1.5px solid rgba(26,107,47,0.08); transition:transform 0.3s,box-shadow 0.3s; position:relative; }
+.prod-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(26,107,47,0.14); }
+.prod-card:hover .prod-actions { opacity:1; transform:translateY(0); }
+.prod-img { height:200px; display:flex; align-items:center; justify-content:center; position:relative; font-size:72px; transition:transform 0.4s; }
+.prod-card:hover .prod-img { transform:scale(1.05); }
+.bg-gs{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)} .bg-ys{background:linear-gradient(135deg,#fffde7,#fff9c4)} .bg-os{background:linear-gradient(135deg,#fff3e0,#ffe0b2)} .bg-rs{background:linear-gradient(135deg,#fce4ec,#f8bbd0)} .bg-ps{background:linear-gradient(135deg,#f3e5f5,#e1bee7)} .bg-ts{background:linear-gradient(135deg,#e0f2f1,#b2dfdb)} .bg-ls{background:linear-gradient(135deg,#f1f8e9,#dcedc8)} .bg-bs{background:linear-gradient(135deg,#efebe9,#d7ccc8)}
+.prod-badge { position:absolute; top:12px; left:12px; font-family:'Syne',sans-serif; font-weight:700; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; padding:4px 10px; border-radius:12px; z-index:2; }
+.bf{background:var(--green);color:#fff} .bs{background:var(--red);color:#fff} .bn{background:var(--orange);color:#fff} .bo{background:var(--lime);color:var(--dark)}
+.prod-actions { position:absolute; bottom:0; left:0; right:0; display:flex; gap:8px; padding:12px; background:linear-gradient(to top,rgba(0,0,0,0.6),transparent); opacity:0; transform:translateY(8px); transition:all 0.3s; }
+.btn-add { flex:1; background:var(--yellow); color:var(--dark); border:none; border-radius:8px; padding:10px; font-family:'Syne',sans-serif; font-weight:700; font-size:12px; cursor:pointer; transition:background 0.2s; }
+.btn-add:hover { background:#f0b800; }
+.btn-wish { width:38px; height:38px; background:rgba(255,255,255,0.9); border:none; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:16px; }
+.prod-body { padding:16px; }
+.prod-name { font-family:'Syne',sans-serif; font-weight:700; font-size:15px; color:var(--dark); margin-bottom:4px; }
+.prod-unit { font-size:12px; color:var(--muted); margin-bottom:10px; }
+.prod-footer { display:flex; justify-content:space-between; align-items:center; }
+.prod-price { font-family:'Syne',sans-serif; font-weight:800; font-size:18px; color:var(--green); }
+.prod-price .old { font-size:12px; color:var(--muted); text-decoration:line-through; margin-right:4px; font-weight:400; }
+.prod-rating { font-size:12px; color:var(--muted); }
+.prod-rating span { color:var(--orange); }
+
+/* HOW IT WORKS */
+.how { background:var(--green); padding:80px 72px; }
+.how .sec-title { color:#fff; } .how .sec-label { color:var(--lime); }
+.steps-row { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-top:60px; position:relative; }
+.steps-row::before { content:''; position:absolute; top:44px; left:12%; width:76%; height:2px; background:repeating-linear-gradient(90deg,rgba(123,197,66,0.4) 0,rgba(123,197,66,0.4) 12px,transparent 12px,transparent 24px); }
+.step-card { text-align:center; }
+.step-num-wrap { width:88px; height:88px; border-radius:50%; background:rgba(255,255,255,0.08); border:2px solid rgba(123,197,66,0.4); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:40px; }
+.step-title { font-family:'Syne',sans-serif; font-weight:700; font-size:16px; color:#fff; margin-bottom:8px; }
+.step-desc { font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6; }
+
+/* ═══════════════════════════════════
+   CART SIDEBAR
+═══════════════════════════════════ */
+.overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:299; opacity:0; pointer-events:none; transition:opacity 0.3s; }
+.overlay.open { opacity:1; pointer-events:all; }
+.cart-sidebar {
+  position:fixed; top:0; right:-480px; width:480px; height:100vh;
+  background:#fff; z-index:300; display:flex; flex-direction:column;
+  transition:right 0.4s cubic-bezier(.17,.67,.35,1);
+  box-shadow:-20px 0 60px rgba(0,0,0,0.15);
+}
+.cart-sidebar.open { right:0; }
+.cart-head { display:flex; align-items:center; justify-content:space-between; padding:24px 28px; border-bottom:1px solid #f0f0f0; }
+.cart-head h3 { font-family:'Syne',sans-serif; font-weight:800; font-size:20px; color:var(--dark); }
+.close-btn { background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted); }
+.cart-items { flex:1; overflow-y:auto; padding:20px 28px; }
+.cart-empty { text-align:center; padding:60px 20px; color:var(--muted); }
+.cart-empty .empty-icon { font-size:64px; margin-bottom:16px; }
+.cart-empty p { font-family:'Syne',sans-serif; font-size:16px; }
+.cart-item { display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid #f5f5f5; }
+.ci-emoji { font-size:36px; width:60px; height:60px; background:var(--offwhite); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ci-info { flex:1; }
+.ci-name { font-family:'Syne',sans-serif; font-weight:700; font-size:14px; color:var(--dark); }
+.ci-price { font-size:13px; color:var(--green); font-weight:600; margin-top:2px; }
+.ci-qty { display:flex; align-items:center; gap:10px; margin-top:8px; }
+.qty-btn { width:28px; height:28px; border-radius:50%; border:1.5px solid var(--lime); background:none; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--green); transition:all 0.2s; }
+.qty-btn:hover { background:var(--green); color:#fff; border-color:var(--green); }
+.qty-num { font-family:'Syne',sans-serif; font-weight:700; font-size:15px; min-width:20px; text-align:center; }
+.ci-remove { background:none; border:none; font-size:18px; cursor:pointer; color:#ccc; transition:color 0.2s; }
+.ci-remove:hover { color:var(--red); }
+.cart-foot { padding:24px 28px; border-top:2px solid #f0f0f0; background:#fafafa; }
+.cart-total { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.ct-label { font-size:13px; color:var(--muted); }
+.ct-val { font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--green); }
+.delivery-note { font-size:12px; color:var(--lime); font-weight:600; margin-bottom:20px; }
+.btn-checkout { width:100%; padding:18px; background:var(--green); color:#fff; border:none; border-radius:10px; font-family:'Syne',sans-serif; font-weight:800; font-size:15px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:background 0.2s; display:flex; align-items:center; justify-content:center; gap:10px; }
+.btn-checkout:hover { background:var(--green2); }
+
+/* ═══════════════════════════════════
+   ORDER MODAL (Checkout form)
+═══════════════════════════════════ */
+.modal-bg { position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:400; display:none; align-items:center; justify-content:center; padding:20px; }
+.modal-bg.open { display:flex; }
+.modal { background:#fff; border-radius:20px; width:100%; max-width:540px; max-height:90vh; overflow-y:auto; position:relative; }
+.modal-head { padding:28px 32px 20px; border-bottom:1px solid #f0f0f0; }
+.modal-head h3 { font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:var(--dark); }
+.modal-head p { font-size:13px; color:var(--muted); margin-top:4px; }
+.modal-close { position:absolute; top:24px; right:24px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted); }
+.modal-body { padding:24px 32px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-family:'Syne',sans-serif; font-weight:700; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--dark); margin-bottom:8px; }
+.form-group input, .form-group textarea, .form-group select {
+  width:100%; padding:13px 16px;
+  border:1.5px solid #e8e8e8; border-radius:10px;
+  font-family:'Nunito',sans-serif; font-size:14px; color:var(--text);
+  outline:none; transition:border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--green); }
+.form-group textarea { resize:vertical; min-height:80px; }
+.order-summary { background:var(--offwhite); border-radius:12px; padding:16px; margin-bottom:20px; }
+.os-title { font-family:'Syne',sans-serif; font-weight:700; font-size:13px; color:var(--dark); margin-bottom:12px; }
+.os-item { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:6px; }
+.os-total { display:flex; justify-content:space-between; font-family:'Syne',sans-serif; font-weight:800; font-size:16px; color:var(--green); margin-top:10px; padding-top:10px; border-top:1.5px solid rgba(26,107,47,0.15); }
+.mpesa-notice { background:#e8f5e9; border:1.5px solid rgba(26,107,47,0.2); border-radius:10px; padding:14px 16px; margin-bottom:20px; display:flex; align-items:flex-start; gap:12px; }
+.mpesa-icon { font-size:24px; flex-shrink:0; }
+.mpesa-text { font-size:13px; color:var(--green); line-height:1.6; }
+.mpesa-text strong { font-family:'Syne',sans-serif; display:block; margin-bottom:2px; }
+.btn-pay { width:100%; padding:18px; background:var(--green); color:#fff; border:none; border-radius:10px; font-family:'Syne',sans-serif; font-weight:800; font-size:16px; cursor:pointer; transition:background 0.2s; display:flex; align-items:center; justify-content:center; gap:10px; }
+.btn-pay:hover { background:var(--green2); }
+.btn-pay:disabled { background:#ccc; cursor:not-allowed; }
+
+/* ═══════════════════════════════════
+   PAYMENT STATUS MODAL
+═══════════════════════════════════ */
+.status-modal { background:#fff; border-radius:20px; width:100%; max-width:420px; padding:48px 40px; text-align:center; }
+.status-icon { font-size:72px; margin-bottom:20px; display:block; animation:bounceIn 0.6s both; }
+@keyframes bounceIn { 0%{transform:scale(0)} 60%{transform:scale(1.15)} 100%{transform:scale(1)} }
+.status-title { font-family:'Syne',sans-serif; font-weight:800; font-size:24px; color:var(--dark); margin-bottom:10px; }
+.status-desc { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:24px; }
+.status-ref { background:var(--offwhite); border-radius:10px; padding:14px 20px; font-family:'Syne',sans-serif; font-size:13px; color:var(--dark); margin-bottom:24px; }
+.status-ref span { color:var(--green); font-weight:800; font-size:18px; display:block; margin-top:4px; }
+.spinner { width:56px; height:56px; border:4px solid #e8f5e9; border-top-color:var(--green); border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 24px; }
+@keyframes spin { to{transform:rotate(360deg)} }
+.btn-done { padding:14px 40px; background:var(--green); color:#fff; border:none; border-radius:10px; font-family:'Syne',sans-serif; font-weight:700; font-size:14px; cursor:pointer; }
+.btn-done:hover { background:var(--green2); }
+
+/* FOOTER */
+footer { background:var(--dark); color:#fff; padding:60px 72px 32px; }
+.footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:56px; margin-bottom:48px; }
+.footer-brand p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.75; margin-top:16px; max-width:260px; }
+.footer-col h5 { font-family:'Syne',sans-serif; font-weight:700; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--lime); margin-bottom:20px; }
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:12px; }
+.footer-col a { font-size:13px; color:rgba(255,255,255,0.5); text-decoration:none; transition:color 0.2s; }
+.footer-col a:hover { color:var(--yellow); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:28px; border-top:1px solid rgba(255,255,255,0.08); font-size:12px; color:rgba(255,255,255,0.3); }
+
+/* TOAST */
+.toast { position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(80px); z-index:999; background:var(--dark); color:#fff; padding:14px 24px; border-radius:10px; display:flex; align-items:center; gap:10px; font-family:'Syne',sans-serif; font-weight:600; font-size:13px; border-left:4px solid var(--lime); box-shadow:0 8px 32px rgba(0,0,0,0.25); opacity:0; transition:all 0.4s cubic-bezier(.17,.67,.35,1); white-space:nowrap; }
+.toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">🥦</div>
+    <div>
+      <div class="logo-text">Mama <span>Mboga</span></div>
+      <div class="logo-sub">Farm Fresh Delivery</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Vegetables</a></li>
+    <li><a href="#products">Fruits</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+  <button class="cart-pill" onclick="openCart()">
+    🛒 My Bag <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌿 Freshest in Nairobi</div>
+    <h1 class="hero-title">Farm <span class="y">Fresh</span><br>To Your <span class="l">Door</span></h1>
+    <p class="hero-desc">Order fresh vegetables, fruits & cereals from local farms. Pay with M-Pesa. Delivered same-day across Nairobi.</p>
+    <div class="hero-actions">
+      <button class="btn-hero p" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="btn-hero s" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How It Works</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">2,400+</div><div class="stat-label">Happy customers</div></div>
+      <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Local farms</div></div>
+      <div class="stat-item"><div class="stat-num">Same Day</div><div class="stat-label">Delivery</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="produce-float">
+      <div class="float-card fc1"><span class="float-emoji">🥬</span><div class="float-name">Sukuma Wiki</div><div class="float-price">Ksh 30/bunch</div><div class="float-badge">Fresh Today</div></div>
+      <div class="float-card fc2"><span class="float-emoji">🍅</span><div class="float-name">Tomatoes</div><div class="float-price">Ksh 80/kg</div><div class="float-badge">Organic</div></div>
+      <div class="float-card fc3"><span class="float-emoji">🧅</span><div class="float-name">Red Onions</div><div class="float-price">Ksh 120/kg</div><div class="float-badge">Farm Direct</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-track">
+    <span class="trust-item"><span class="trust-dot">✦</span>Sourced from local Kenyan farms</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>Same-day delivery in Nairobi</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>Pay securely with M-Pesa</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>100% fresh guarantee</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>No pesticides · Natural produce</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>Sourced from local Kenyan farms</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>Same-day delivery in Nairobi</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>Pay securely with M-Pesa</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>100% fresh guarantee</span>
+    <span class="trust-item"><span class="trust-dot">✦</span>No pesticides · Natural produce</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section categories">
+  <div class="sec-header">
+    <div><p class="sec-label">Browse By Type</p><h2 class="sec-title">What are you <em>looking for?</em></h2></div>
+  </div>
+  <div class="cats-row">
+    <div class="cat-chip active" onclick="filterCat(this,'all')"><div class="cat-emoji-wrap">🥦</div><span class="cat-chip-name">All Fresh</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'leafy')"><div class="cat-emoji-wrap">🥬</div><span class="cat-chip-name">Leafy Greens</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'tomatoes')"><div class="cat-emoji-wrap">🍅</div><span class="cat-chip-name">Tomatoes</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'roots')"><div class="cat-emoji-wrap">🥕</div><span class="cat-chip-name">Root Veg</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'fruits')"><div class="cat-emoji-wrap">🍌</div><span class="cat-chip-name">Fruits</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'cereals')"><div class="cat-emoji-wrap">🌽</div><span class="cat-chip-name">Cereals</span></div>
+    <div class="cat-chip" onclick="filterCat(this,'bulbs')"><div class="cat-emoji-wrap">🧅</div><span class="cat-chip-name">Bulbs</span></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="sec-header">
+    <div><p class="sec-label">Today's Market</p><h2 class="sec-title">Fresh <em>Picks</em> of the Day</h2></div>
+    <a href="#" class="sec-link">View all →</a>
+  </div>
+  <div class="products-grid" id="productsGrid">
+
+    <div class="prod-card reveal" data-cat="leafy">
+      <div class="prod-img bg-gs">🥬<div class="prod-badge bf">Fresh Today</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Sukuma Wiki','🥬',30,'Per bunch')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Sukuma Wiki</div><div class="prod-unit">Per bunch · Approx 500g</div><div class="prod-footer"><div class="prod-price">Ksh 30</div><div class="prod-rating"><span>★★★★★</span> 4.9</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="tomatoes">
+      <div class="prod-img bg-rs">🍅<div class="prod-badge bo">Organic</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Tomatoes','🍅',80,'Per kg')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Tomatoes</div><div class="prod-unit">Per kg · Farm picked</div><div class="prod-footer"><div class="prod-price">Ksh 80</div><div class="prod-rating"><span>★★★★★</span> 4.8</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="bulbs">
+      <div class="prod-img bg-os">🧅<div class="prod-badge bs">Sale</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Red Onions','🧅',120,'Per kg')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Red Onions</div><div class="prod-unit">Per kg · Kisumu grown</div><div class="prod-footer"><div class="prod-price"><span class="old">Ksh 150</span>Ksh 120</div><div class="prod-rating"><span>★★★★☆</span> 4.6</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="cereals">
+      <div class="prod-img bg-ys">🌽<div class="prod-badge bf">Farm Direct</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Sweet Maize','🌽',20,'Per cob')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Sweet Maize</div><div class="prod-unit">Per cob · Ready to eat</div><div class="prod-footer"><div class="prod-price">Ksh 20</div><div class="prod-rating"><span>★★★★★</span> 5.0</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="leafy">
+      <div class="prod-img bg-gs">🥦<div class="prod-badge bo">Organic</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Broccoli','🥦',90,'Per head')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Broccoli</div><div class="prod-unit">Per head · Kinangop farm</div><div class="prod-footer"><div class="prod-price">Ksh 90</div><div class="prod-rating"><span>★★★★★</span> 4.9</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="leafy">
+      <div class="prod-img bg-ls">🥒<div class="prod-badge bn">New</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Cucumber','🥒',40,'Per piece')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Cucumber</div><div class="prod-unit">Per piece · Chilled fresh</div><div class="prod-footer"><div class="prod-price">Ksh 40</div><div class="prod-rating"><span>★★★★☆</span> 4.5</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="roots">
+      <div class="prod-img bg-os">🥕<div class="prod-badge bf">Fresh Today</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Carrots','🥕',70,'Per kg')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Carrots</div><div class="prod-unit">Per kg · Nyandarua</div><div class="prod-footer"><div class="prod-price">Ksh 70</div><div class="prod-rating"><span>★★★★★</span> 4.9</div></div></div>
+    </div>
+
+    <div class="prod-card reveal" data-cat="fruits">
+      <div class="prod-img bg-ys">🍌<div class="prod-badge bo">Organic</div>
+        <div class="prod-actions"><button class="btn-add" onclick="addToCart(this,'Bananas','🍌',60,'Per bunch')">+ Add to Bag</button><button class="btn-wish">🤍</button></div>
+      </div>
+      <div class="prod-body"><div class="prod-name">Bananas</div><div class="prod-unit">Per bunch · Coastal grown</div><div class="prod-footer"><div class="prod-price">Ksh 60</div><div class="prod-rating"><span>★★★★★</span> 4.8</div></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="how">
+  <div class="sec-header" style="margin-bottom:0"><div><p class="sec-label">Simple & Fast</p><h2 class="sec-title">How It <em>Works</em></h2></div></div>
+  <div class="steps-row">
+    <div class="step-card reveal"><div class="step-num-wrap">🛒</div><div class="step-title">Browse & Pick</div><p class="step-desc">Choose from 200+ fresh produce items updated daily from local farms.</p></div>
+    <div class="step-card reveal"><div class="step-num-wrap">📍</div><div class="step-title">Set Location</div><p class="step-desc">Enter your delivery address anywhere in Nairobi and surrounding towns.</p></div>
+    <div class="step-card reveal"><div class="step-num-wrap">📲</div><div class="step-title">Pay via M-Pesa</div><p class="step-desc">Enter your M-Pesa number, get a PIN prompt instantly. Secure and instant.</p></div>
+    <div class="step-card reveal"><div class="step-num-wrap">🏠</div><div class="step-title">Delivered Fresh</div><p class="step-desc">Your order arrives same-day, packed in eco-friendly bags. Freshness guaranteed.</p></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo"><div class="logo-icon">🥦</div><div><div class="logo-text">Mama <span>Mboga</span></div><div class="logo-sub" style="color:rgba(255,255,255,0.4)">Farm Fresh Delivery</div></div></a>
+      <p>Connecting Nairobi households with fresh, local produce from Kenyan farms. Every day, fresh to your door.</p>
+    </div>
+    <div class="footer-col"><h5>Shop</h5><ul><li><a href="#">Vegetables</a></li><li><a href="#">Fruits</a></li><li><a href="#">Cereals</a></li><li><a href="#">Bundles</a></li></ul></div>
+    <div class="footer-col"><h5>About</h5><ul><li><a href="#">Our Story</a></li><li><a href="#">Our Farmers</a></li><li><a href="#">Sustainability</a></li></ul></div>
+    <div class="footer-col"><h5>Help</h5><ul><li><a href="#">Track Order</a></li><li><a href="#">Delivery Info</a></li><li><a href="https://wa.me/254712345678">WhatsApp Us</a></li><li><a href="tel:+254712345678">0712 345 678</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Mama Mboga. All rights reserved.</span><span>Made with 🥬 in Nairobi</span></div>
+</footer>
+
+<!-- ═══ CART SIDEBAR ═══ -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-head">
+    <h3>🛒 My Bag (<span id="cartItemCount">0</span> items)</h3>
+    <button class="close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="empty-icon">🥬</div><p>Your bag is empty</p><p style="font-size:13px;color:#bbb;margin-top:8px">Add some fresh produce!</p></div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total"><span class="ct-label">Total</span><span class="ct-val">Ksh <span id="cartTotal">0</span></span></div>
+    <p class="delivery-note" id="deliveryNote"></p>
+    <button class="btn-checkout" onclick="openCheckout()">📲 Checkout with M-Pesa</button>
+  </div>
+</div>
+
+<!-- ═══ CHECKOUT MODAL ═══ -->
+<div class="modal-bg" id="checkoutModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Complete Your Order</h3>
+      <p>Fill in your details and pay with M-Pesa</p>
+      <button class="modal-close" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="order-summary" id="orderSummary"></div>
+      <div class="mpesa-notice">
+        <span class="mpesa-icon">📲</span>
+        <div class="mpesa-text"><strong>M-Pesa STK Push</strong>After placing your order, you'll receive an M-Pesa PIN prompt on your phone. Enter your PIN to confirm payment.</div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Full Name</label><input type="text" id="custName" placeholder="e.g. Wanjiru Mwangi" required></div>
+        <div class="form-group"><label>M-Pesa Phone</label><input type="tel" id="custPhone" placeholder="07XX XXX XXX" required></div>
+      </div>
+      <div class="form-group"><label>Delivery Address</label><input type="text" id="custLocation" placeholder="e.g. Westlands, Nairobi — near Total petrol station" required></div>
+      <div class="form-group"><label>Order Notes (optional)</label><textarea id="custNotes" placeholder="e.g. Call when arriving, leave at gate..."></textarea></div>
+      <button class="btn-pay" id="payBtn" onclick="placeOrder()">📲 Pay with M-Pesa</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAYMENT STATUS MODAL ═══ -->
+<div class="modal-bg" id="statusModal">
+  <div class="status-modal" id="statusContent"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">🛒 <span id="toastMsg">Added!</span></div>
+
+<script>
+// ─── Cart State ───
+let cart = [];
+
+function getCart() { return cart; }
+
+function addToCart(btn, name, emoji, price, unit) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, emoji, price, unit, qty: 1 });
+  }
+  updateCartUI();
+  showToast(emoji + ' ' + name + ' added to bag!');
+  // Animate button
+  btn.textContent = '✓ Added!';
+  btn.style.background = 'var(--green)';
+  btn.style.color = '#fff';
+  setTimeout(() => { btn.textContent = '+ Add to Bag'; btn.style.background = ''; btn.style.color = ''; }, 1200);
+}
+
+function removeFromCart(name) {
+  cart = cart.filter(i => i.name !== name);
+  updateCartUI();
+}
+
+function changeQty(name, delta) {
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeFromCart(name);
+  else updateCartUI();
+}
+
+function getTotal() { return cart.reduce((s, i) => s + i.price * i.qty, 0); }
+function getItemCount() { return cart.reduce((s, i) => s + i.qty, 0); }
+
+function updateCartUI() {
+  const count = getItemCount();
+  const total = getTotal();
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartItemCount').textContent = count;
+  document.getElementById('cartTotal').textContent = total.toLocaleString();
+
+  const note = total >= 500 ? '🎉 You qualify for FREE delivery!' : `Add Ksh ${500 - total} more for free delivery`;
+  document.getElementById('deliveryNote').textContent = note;
+  document.getElementById('deliveryNote').style.color = total >= 500 ? 'var(--lime)' : 'var(--orange)';
+
+  const container = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    container.innerHTML = '<div class="cart-empty"><div class="empty-icon">🥬</div><p>Your bag is empty</p><p style="font-size:13px;color:#bbb;margin-top:8px">Add some fresh produce!</p></div>';
+    return;
+  }
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="ci-emoji">${item.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">Ksh ${item.price} · ${item.unit}</div>
+        <div class="ci-qty">
+          <button class="qty-btn" onclick="changeQty('${item.name}',-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${item.name}',1)">+</button>
+        </div>
+      </div>
+      <button class="ci-remove" onclick="removeFromCart('${item.name}')">✕</button>
+    </div>
+  `).join('');
+}
+
+// ─── Cart Sidebar ───
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// ─── Checkout Modal ───
+function openCheckout() {
+  if (cart.length === 0) { showToast('🥬 Add items to your bag first!'); return; }
+  closeCart();
+  // Build order summary
+  const total = getTotal();
+  const delivery = total >= 500 ? 0 : 50;
+  const grand = total + delivery;
+  document.getElementById('orderSummary').innerHTML = `
+    <div class="os-title">Order Summary</div>
+    ${cart.map(i => `<div class="os-item"><span>${i.emoji} ${i.name} × ${i.qty}</span><span>Ksh ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
+    <div class="os-item"><span>Delivery</span><span>${delivery === 0 ? '<span style="color:var(--green)">FREE</span>' : 'Ksh ' + delivery}</span></div>
+    <div class="os-total"><span>Total to Pay</span><span>Ksh ${grand.toLocaleString()}</span></div>
+  `;
+  document.getElementById('checkoutModal').classList.add('open');
+}
+function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
+
+// ─── Place Order ───
+async function placeOrder() {
+  const name     = document.getElementById('custName').value.trim();
+  const phone    = document.getElementById('custPhone').value.trim();
+  const location = document.getElementById('custLocation').value.trim();
+  const notes    = document.getElementById('custNotes').value.trim();
+
+  if (!name || !phone || !location) { showToast('⚠️ Please fill in all required fields'); return; }
+  if (!/^(07|01|2547|2541)\d{8,}$/.test(phone.replace(/\s/g,''))) {
+    showToast('⚠️ Enter a valid Kenyan phone number'); return;
+  }
+
+  const total    = getTotal();
+  const delivery = total >= 500 ? 0 : 50;
+  const grand    = total + delivery;
+
+  const btn = document.getElementById('payBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending M-Pesa prompt...';
+
+  showStatusModal('waiting', phone);
+
+  try {
+    const res = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        customer: name, phone, location, notes,
+        items: cart.map(i => ({ name: i.name, emoji: i.emoji, qty: i.qty, price: i.price })),
+        total: grand
+      })
+    });
+    const data = await res.json();
+
+    if (!data.success) {
+      showStatusModal('error', null, data.message);
+      btn.disabled = false;
+      btn.textContent = '📲 Pay with M-Pesa';
+      return;
+    }
+
+    closeCheckout();
+    // Poll for payment confirmation
+    pollPayment(data.orderId, name, grand);
+
+  } catch (err) {
+    showStatusModal('error', null, 'Could not connect to server. Please check your internet and try again.');
+    btn.disabled = false;
+    btn.textContent = '📲 Pay with M-Pesa';
+  }
+}
+
+// ─── Poll payment status ───
+async function pollPayment(orderId, name, total) {
+  let attempts = 0;
+  const max = 24; // 2 mins
+  const interval = setInterval(async () => {
+    attempts++;
+    try {
+      const res  = await fetch(`/api/orders/${orderId}`);
+      const data = await res.json();
+      if (data.status === 'paid') {
+        clearInterval(interval);
+        cart = [];
+        updateCartUI();
+        showStatusModal('success', null, null, data.mpesaRef, orderId, name, total);
+      } else if (data.status === 'payment_failed') {
+        clearInterval(interval);
+        showStatusModal('error', null, 'Payment was declined or cancelled. Please try again.');
+        document.getElementById('payBtn').disabled = false;
+        document.getElementById('payBtn').textContent = '📲 Pay with M-Pesa';
+      } else if (attempts >= max) {
+        clearInterval(interval);
+        showStatusModal('timeout', null, `Your order #${orderId} was placed. If you already paid, we'll confirm shortly.`);
+      }
+    } catch (e) { /* keep polling */ }
+  }, 5000);
+}
+
+// ─── Status Modal ───
+function showStatusModal(type, phone, msg, mpesaRef, orderId, name, total) {
+  const modal = document.getElementById('statusModal');
+  const content = document.getElementById('statusContent');
+  modal.classList.add('open');
+
+  if (type === 'waiting') {
+    content.innerHTML = `
+      <div class="spinner"></div>
+      <div class="status-title">Check Your Phone!</div>
+      <div class="status-desc">An M-Pesa payment request has been sent to <strong>${phone}</strong>.<br>Enter your M-Pesa PIN to complete your order.</div>
+      <div class="status-ref">Waiting for confirmation...<span>Do not close this window</span></div>`;
+  } else if (type === 'success') {
+    content.innerHTML = `
+      <span class="status-icon">🎉</span>
+      <div class="status-title">Order Confirmed!</div>
+      <div class="status-desc">Thank you <strong>${name}</strong>! Your fresh produce is being prepared for delivery.</div>
+      <div class="status-ref">M-Pesa Reference<span>${mpesaRef}</span></div>
+      <div class="status-ref">Order ID<span>${orderId}</span></div>
+      <div class="status-ref">Amount Paid<span>Ksh ${total?.toLocaleString()}</span></div>
+      <button class="btn-done" onclick="document.getElementById('statusModal').classList.remove('open')">🥬 Continue Shopping</button>`;
+  } else if (type === 'error') {
+    content.innerHTML = `
+      <span class="status-icon">❌</span>
+      <div class="status-title">Payment Failed</div>
+      <div class="status-desc">${msg}</div>
+      <button class="btn-done" onclick="document.getElementById('statusModal').classList.remove('open');document.getElementById('checkoutModal').classList.add('open')">Try Again</button>`;
+  } else if (type === 'timeout') {
+    content.innerHTML = `
+      <span class="status-icon">⏳</span>
+      <div class="status-title">Order Received</div>
+      <div class="status-desc">${msg}</div>
+      <button class="btn-done" onclick="document.getElementById('statusModal').classList.remove('open')">OK, Got It</button>`;
+  }
+}
+
+// ─── Toast ───
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ─── Category Filter ───
+function filterCat(el, cat) {
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.prod-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+// ─── Scroll Reveal ───
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = (Array.from(e.target.parentElement?.children||[]).indexOf(e.target) * 80) + 'ms';
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
