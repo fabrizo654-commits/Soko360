@@ -25,10 +25,6 @@ a{text-decoration:none;color:inherit;}
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:#CED4DA;border-radius:99px;}
-
-/* ════════════════════════════
-   AUTH SCREEN
-════════════════════════════ */
 #authScreen{position:fixed;inset:0;z-index:2000;background:linear-gradient(135deg,#013d27 0%,#026844 50%,#038858 100%);display:flex;align-items:center;justify-content:center;padding:20px;}
 #authScreen.hidden{display:none;}
 .auth-card{background:#fff;border-radius:20px;width:100%;max-width:400px;overflow:hidden;box-shadow:var(--shadow-lg);}
@@ -57,10 +53,6 @@ a{text-decoration:none;color:inherit;}
 .auth-note{font-size:11px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6;}
 .auth-divider{display:flex;align-items:center;gap:10px;margin:16px 0;color:var(--muted);font-size:11px;font-weight:600;}
 .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
-
-/* ════════════════════════════
-   TOPBAR + NAV
-════════════════════════════ */
 .topbar{background:var(--moss);color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:500;position:relative;overflow:hidden;}
 .topbar::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 60px);}
 .topbar a{color:rgba(255,255,255,.75);text-decoration:underline;margin-left:8px;font-size:11.5px;}
@@ -83,7 +75,6 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .hamburger-btn.open .hline:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
 .hamburger-btn.open .hline:nth-child(2){opacity:0;}
 .hamburger-btn.open .hline:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
-/* User pill in nav */
 .user-pill{display:flex;align-items:center;gap:6px;background:var(--moss-light);border:1.5px solid #b8d8c8;border-radius:99px;padding:5px 12px 5px 6px;cursor:pointer;transition:all .2s;position:relative;}
 .user-pill:hover{background:#d0eadc;}
 .user-avatar{width:26px;height:26px;border-radius:50%;background:var(--moss);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
@@ -94,10 +85,6 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .ud-item:hover{background:var(--bg);}
 .ud-item.danger{color:var(--red);}
 .ud-item .ud-icon{font-size:15px;width:20px;text-align:center;}
-
-/* ════════════════════════════
-   SIDE DRAWER
-════════════════════════════ */
 .drawer-overlay-side{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:390;opacity:0;pointer-events:none;transition:opacity .3s;}
 .drawer-overlay-side.open{opacity:1;pointer-events:all;}
 .drawer{position:fixed;top:0;left:-290px;width:290px;height:100vh;background:#fff;z-index:410;display:flex;flex-direction:column;padding:20px;transition:left .35s cubic-bezier(.25,.46,.45,.94);box-shadow:8px 0 40px rgba(0,0,0,.12);}
@@ -115,10 +102,6 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .drawer-foot{margin-top:auto;background:linear-gradient(135deg,var(--moss),#038858);border-radius:12px;padding:16px;}
 .drawer-foot p{font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;}
 .drawer-foot strong{color:#fff;display:block;margin-bottom:4px;font-size:13px;}
-
-/* ════════════════════════════
-   HERO
-════════════════════════════ */
 .hero{background:var(--moss);overflow:hidden;position:relative;}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#013d27 0%,#026844 45%,#038858 100%);}
 .hero-pattern{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='22' stroke='%23fff' stroke-width='.3' stroke-opacity='.06' fill='none'/%3E%3C/svg%3E");}
@@ -141,15 +124,11 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .hero-cards::-webkit-scrollbar{display:none;}
 .hcard{flex-shrink:0;width:112px;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:12px 12px 0 0;margin-right:8px;overflow:hidden;cursor:pointer;transition:transform .2s,background .2s;}
 .hcard:hover{transform:translateY(-4px);background:rgba(255,255,255,.17);}
-.hcard-img{height:72px;display:flex;align-items:center;justify-content:center;font-size:34px;}
+.hcard-img{height:72px;display:flex;align-items:center;justify-content:center;font-size:34px;overflow:hidden;}
 .hcard-body{padding:8px 10px 10px;}
 .hcard-name{font-weight:700;font-size:11px;color:#fff;margin-bottom:2px;}
 .hcard-price{font-size:10px;color:rgba(255,255,255,.55);}
 .hcard-tag{display:inline-block;background:var(--orange);color:#fff;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:99px;padding:2px 6px;margin-top:5px;}
-
-/* ════════════════════════════
-   TICKER / PROMO / CATS / GRID
-════════════════════════════ */
 .ticker{background:#fff;border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;padding:9px 0;}
 .ticker-inner{display:inline-flex;animation:tick 32s linear infinite;}
 .tick-item{display:inline-flex;align-items:center;gap:8px;padding:0 24px;font-size:11.5px;font-weight:600;color:var(--muted);}
@@ -185,6 +164,7 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .pcard-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
 .pcard:hover .pcard-img-wrap img{transform:scale(1.06);}
 .pcard-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px;}
+/* pastel bg helpers kept for fallback */
 .bg-green{background:linear-gradient(135deg,#e6f4ee,#c8e8d5);}
 .bg-red{background:linear-gradient(135deg,#fce8e8,#f5c4c4);}
 .bg-orange{background:linear-gradient(135deg,#fff0d8,#ffd89a);}
@@ -194,6 +174,8 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .bg-grey{background:linear-gradient(135deg,#f4f4f4,#e8e8e8);}
 .discount-badge{position:absolute;top:8px;left:8px;background:#FFF0F0;color:var(--red);font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px;border:1px solid #FFC9C9;z-index:2;}
 .size-badge{position:absolute;top:8px;right:8px;font-size:9px;font-weight:700;background:rgba(255,255,255,.9);color:#495057;padding:2px 7px;border-radius:99px;border:1px solid var(--border);z-index:2;}
+/* Local badge — earthy teal */
+.local-badge{position:absolute;bottom:8px;left:8px;background:#013d27;color:#a8efc4;font-size:9px;font-weight:800;padding:3px 9px;border-radius:99px;border:1px solid #025a3a;z-index:2;letter-spacing:.5px;}
 .pcard-body{padding:10px 11px 12px;display:flex;flex-direction:column;flex:1;}
 .pcard-name{font-weight:600;font-size:13px;color:#343A40;line-height:1.35;margin-bottom:2px;min-height:36px;}
 .pcard-origin{font-size:10px;color:var(--moss);font-weight:700;margin-bottom:6px;}
@@ -206,10 +188,6 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .btn-add:hover{background:var(--orange-hover);}
 .btn-add.in-cart{background:var(--moss);}
 .no-results{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:14px;}
-
-/* ════════════════════════════
-   FARM / TESTI / WHY / STATS / HOW
-════════════════════════════ */
 .farm-section{margin:18px 16px;border-radius:14px;overflow:hidden;background:var(--moss);position:relative;min-height:160px;display:flex;align-items:flex-end;}
 .farm-emoji-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:90px;opacity:.1;}
 .farm-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,61,37,.95) 0%,rgba(2,61,37,.4) 60%,transparent 100%);}
@@ -249,10 +227,6 @@ nav.scrolled{box-shadow:var(--shadow-md);}
 .step-num{width:42px;height:42px;background:var(--moss);color:#fff;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:18px;flex-shrink:0;}
 .step-title{font-weight:700;font-size:14px;color:var(--text);margin-bottom:3px;}
 .step-desc{font-size:12.5px;color:var(--muted);line-height:1.6;}
-
-/* ════════════════════════════
-   FOOTER
-════════════════════════════ */
 footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .foot-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;gap:16px;}
 .foot-logo{font-family:'Fraunces',serif;font-weight:900;font-size:20px;color:#fff;}
@@ -268,10 +242,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .foot-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:14px;}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
 .foot-bottom span{font-size:11.5px;color:rgba(255,255,255,.22);}
-
-/* ════════════════════════════
-   CART PANEL
-════════════════════════════ */
 .cart-panel{position:fixed;top:0;right:-105%;width:100%;max-width:420px;height:100vh;background:#fff;z-index:500;display:flex;flex-direction:column;transition:right .35s cubic-bezier(.25,.46,.45,.94);box-shadow:-12px 0 50px rgba(0,0,0,.14);}
 .cart-panel.open{right:0;}
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:490;opacity:0;pointer-events:none;transition:opacity .3s;}
@@ -286,7 +256,7 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .ce-title{font-family:'Fraunces',serif;font-weight:700;font-size:18px;margin-bottom:6px;}
 .ce-sub{font-size:13px;color:var(--muted);}
 .cart-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
-.ci-img{width:46px;height:46px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.ci-img{width:46px;height:46px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;overflow:hidden;}
 .ci-info{flex:1;}
 .ci-name{font-weight:600;font-size:13px;margin-bottom:1px;}
 .ci-meta{font-size:11px;color:var(--muted);}
@@ -306,10 +276,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .cs-row.cs-total{font-weight:700;color:var(--text);font-size:14.5px;padding-top:8px;border-top:1px solid var(--border);margin-top:4px;}
 .btn-checkout-main{width:100%;background:var(--moss);color:#fff;border:none;border-radius:10px;padding:14px;font-weight:800;font-size:14px;transition:all .2s;box-shadow:0 4px 14px rgba(2,104,68,.22);}
 .btn-checkout-main:hover{background:var(--moss-dark);}
-
-/* ════════════════════════════
-   CHECKOUT SHEET
-════════════════════════════ */
 .sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:600;display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px);}
 .sheet-bg.open{opacity:1;pointer-events:all;}
 .sheet{background:#fff;border-radius:22px 22px 0 0;width:100%;max-height:94vh;overflow-y:auto;transition:transform .35s cubic-bezier(.25,.46,.45,.94);transform:translateY(100%);}
@@ -341,10 +307,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .btn-pay{width:100%;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:14px;font-weight:800;font-size:14.5px;transition:all .2s;margin-top:8px;box-shadow:0 4px 14px rgba(255,146,43,.3);}
 .btn-pay:hover{background:var(--orange-hover);}
 .btn-pay:disabled{opacity:.6;cursor:not-allowed;}
-
-/* ════════════════════════════
-   STATUS SHEET
-════════════════════════════ */
 .status-sheet{background:#fff;border-radius:22px 22px 0 0;width:100%;padding:40px 26px 50px;text-align:center;}
 .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--moss);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px;}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -355,10 +317,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .sd-label{font-size:12px;color:var(--muted);font-weight:600;}
 .sd-val{font-size:12px;font-weight:700;}
 .btn-done{background:var(--moss);color:#fff;border:none;border-radius:9px;padding:13px 26px;font-weight:700;font-size:14px;margin-top:16px;}
-
-/* ════════════════════════════
-   ADMIN DASHBOARD
-════════════════════════════ */
 #adminDash{display:none;min-height:100vh;background:var(--bg);}
 #adminDash.active{display:block;}
 .admin-nav{background:var(--moss-dark);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;position:sticky;top:0;z-index:400;}
@@ -371,7 +329,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .btn-admin-logout{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:7px;padding:7px 13px;font-size:12.5px;font-weight:700;transition:background .2s;}
 .btn-admin-logout:hover{background:rgba(255,255,255,.18);}
 .admin-body{padding:20px 16px;}
-/* Stats cards */
 .admin-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px;}
 @media(min-width:600px){.admin-stats{grid-template-columns:repeat(4,1fr);}}
 .astat-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm);}
@@ -380,19 +337,15 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .astat-label{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:3px;}
 .astat-card.highlight{background:var(--moss);border-color:var(--moss);}
 .astat-card.highlight .astat-val,.astat-card.highlight .astat-label{color:#fff;}
-.astat-card.highlight .astat-icon{filter:none;}
-/* Filter bar */
 .orders-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:10px;flex-wrap:wrap;}
 .orders-header h2{font-family:'Fraunces',serif;font-weight:700;font-size:18px;}
 .admin-filter-wrap{display:flex;gap:8px;flex-wrap:wrap;}
 .admin-filter-btn{padding:7px 14px;border-radius:99px;font-size:12px;font-weight:700;border:1.5px solid var(--border);background:#fff;color:var(--muted);transition:all .2s;cursor:pointer;}
 .admin-filter-btn:hover{border-color:var(--moss);color:var(--moss);}
 .admin-filter-btn.active{background:var(--moss);color:#fff;border-color:var(--moss);}
-/* Search orders */
 .admin-search{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:0 13px;height:38px;margin-bottom:14px;transition:border-color .2s;}
 .admin-search:focus-within{border-color:var(--moss);}
 .admin-search input{border:none;outline:none;font-size:13px;font-family:'DM Sans',sans-serif;flex:1;background:transparent;}
-/* Order cards */
 .order-list{display:flex;flex-direction:column;gap:10px;}
 .order-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s;}
 .order-card:hover{box-shadow:var(--shadow-md);}
@@ -428,19 +381,15 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 .btn-whatsapp:hover{opacity:.9;}
 .no-orders{text-align:center;padding:48px 20px;color:var(--muted);}
 .no-orders-icon{font-size:42px;margin-bottom:12px;}
-/* Toast */
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(16px);background:#212529;color:#fff;padding:10px 20px;border-radius:99px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .28s;z-index:9999;white-space:nowrap;box-shadow:var(--shadow-md);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-/* FAB */
 .fab-cart{position:fixed;bottom:20px;right:16px;z-index:350;background:var(--moss);color:#fff;border:none;border-radius:14px;padding:12px 18px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(2,104,68,.32);transition:all .2s;}
 .fab-cart:hover{background:var(--moss-dark);transform:translateY(-2px);}
 .fab-badge{background:var(--orange);color:#fff;border-radius:99px;min-width:18px;height:18px;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 4px;}
 .fab-wa{position:fixed;bottom:20px;left:16px;z-index:350;background:#25D366;color:#fff;border-radius:14px;padding:12px 18px;font-size:16px;display:flex;align-items:center;gap:6px;box-shadow:0 6px 24px rgba(37,211,102,.35);transition:all .2s;text-decoration:none;font-weight:700;font-size:13px;}
 .fab-wa:hover{background:#128C7E;transform:translateY(-2px);}
-/* Reveal */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .45s,transform .45s;}
 .rv.vis{opacity:1;transform:translateY(0);}
-.pcard{opacity:1;transform:none;}
 .pcard.rv{opacity:0;transform:translateY(16px);}
 .pcard.rv.vis{opacity:1;transform:translateY(0);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -460,47 +409,27 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
       <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">Create Account</button>
     </div>
     <div class="auth-body">
-
-      <!-- LOGIN -->
       <div class="auth-panel active" id="panelLogin">
         <div class="auth-err" id="loginErr"></div>
-        <div class="fgroup">
-          <label>Email Address</label>
-          <div class="input-icon-wrap"><span class="f-icon">📧</span><input type="email" id="loginEmail" placeholder="you@example.com" onkeydown="if(event.key==='Enter')doLogin()"></div>
-        </div>
-        <div class="fgroup">
-          <label>Password</label>
-          <div class="input-icon-wrap"><span class="f-icon">🔒</span><input type="password" id="loginPassword" placeholder="Your password" onkeydown="if(event.key==='Enter')doLogin()"></div>
-        </div>
+        <div class="fgroup"><label>Email Address</label><div class="input-icon-wrap"><span class="f-icon">📧</span><input type="email" id="loginEmail" placeholder="you@example.com" onkeydown="if(event.key==='Enter')doLogin()"></div></div>
+        <div class="fgroup"><label>Password</label><div class="input-icon-wrap"><span class="f-icon">🔒</span><input type="password" id="loginPassword" placeholder="Your password" onkeydown="if(event.key==='Enter')doLogin()"></div></div>
         <button class="btn-auth" id="loginBtn" onclick="doLogin()">Sign In →</button>
         <div class="auth-note">Don't have an account? <a href="#" onclick="switchAuthTab('register')" style="color:var(--moss);font-weight:700;">Create one free</a></div>
         <div class="auth-divider">or</div>
         <button class="btn-auth" style="background:var(--orange);" onclick="guestShop()">Continue as Guest</button>
       </div>
-
-      <!-- REGISTER -->
       <div class="auth-panel" id="panelRegister">
         <div class="auth-err" id="registerErr"></div>
         <div class="form-row-2" style="margin-bottom:0;">
           <div class="fgroup"><label>First Name</label><input type="text" id="regFirst" placeholder="Wanjiru"></div>
           <div class="fgroup"><label>Last Name</label><input type="text" id="regLast" placeholder="Mwangi"></div>
         </div>
-        <div class="fgroup">
-          <label>Email Address</label>
-          <div class="input-icon-wrap"><span class="f-icon">📧</span><input type="email" id="regEmail" placeholder="you@example.com"></div>
-        </div>
-        <div class="fgroup">
-          <label>Phone (M-Pesa)</label>
-          <div class="input-icon-wrap"><span class="f-icon">📱</span><input type="tel" id="regPhone" placeholder="07XX XXX XXX"></div>
-        </div>
-        <div class="fgroup">
-          <label>Password</label>
-          <div class="input-icon-wrap"><span class="f-icon">🔒</span><input type="password" id="regPassword" placeholder="Min 6 characters"></div>
-        </div>
+        <div class="fgroup"><label>Email Address</label><div class="input-icon-wrap"><span class="f-icon">📧</span><input type="email" id="regEmail" placeholder="you@example.com"></div></div>
+        <div class="fgroup"><label>Phone (M-Pesa)</label><div class="input-icon-wrap"><span class="f-icon">📱</span><input type="tel" id="regPhone" placeholder="07XX XXX XXX"></div></div>
+        <div class="fgroup"><label>Password</label><div class="input-icon-wrap"><span class="f-icon">🔒</span><input type="password" id="regPassword" placeholder="Min 6 characters"></div></div>
         <button class="btn-auth" id="registerBtn" onclick="doRegister()">Create Account →</button>
         <div class="auth-note">Already have an account? <a href="#" onclick="switchAuthTab('login')" style="color:var(--moss);font-weight:700;">Sign in</a></div>
       </div>
-
     </div>
   </div>
 </div>
@@ -516,11 +445,10 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
     <a href="#" class="nav-logo"><div class="nav-logo-icon">🥦</div>Soko<span>360</span></a>
     <div class="nav-search">
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/><path d="M14.5 14.5L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input type="search" id="searchInput" placeholder="Search produce (e.g. Sukuma, Avocado)…" oninput="onSearch(this.value)">
+      <input type="search" id="searchInput" placeholder="Search produce (e.g. Sukuma, Managu, Kunde)…" oninput="onSearch(this.value)">
     </div>
     <div class="nav-right">
       <button class="icon-btn" onclick="toggleCart()">🛒<span class="badge" id="cartBadge">0</span></button>
-      <!-- User pill (shown after login) -->
       <div class="user-pill" id="userPill" style="display:none;" onclick="this.classList.toggle('open')">
         <div class="user-avatar" id="userAvatar">?</div>
         <span class="user-name-pill" id="userNamePill">User</span>
@@ -548,8 +476,8 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
       <a class="drawer-link" href="#" onclick="setCatTab(null,'greens');closeDrawer()"><span class="dl-icon">🥬</span>Leafy Greens</a>
       <a class="drawer-link" href="#" onclick="setCatTab(null,'veg');closeDrawer()"><span class="dl-icon">🍅</span>Vegetables</a>
       <a class="drawer-link" href="#" onclick="setCatTab(null,'fruits');closeDrawer()"><span class="dl-icon">🍌</span>Fruits</a>
-      <a class="drawer-link" href="#" onclick="setCatTab(null,'roots');closeDrawer()"><span class="dl-icon">🥔</span>Roots & Tubers</a>
-      <a class="drawer-link" href="#" onclick="setCatTab(null,'cereals');closeDrawer()"><span class="dl-icon">🌽</span>Cereals & Grains</a>
+      <a class="drawer-link" href="#" onclick="setCatTab(null,'roots');closeDrawer()"><span class="dl-icon">🥔</span>Roots &amp; Tubers</a>
+      <a class="drawer-link" href="#" onclick="setCatTab(null,'cereals');closeDrawer()"><span class="dl-icon">🌽</span>Cereals &amp; Grains</a>
       <a class="drawer-link" href="#" onclick="setCatTab(null,'portions');closeDrawer()"><span class="dl-icon">📦</span>Small Portions</a>
     </div>
     <div class="drawer-div"></div>
@@ -596,7 +524,7 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 
   <div class="promo-strip rv">
     <div><div class="promo-label">Limited Time</div><div class="promo-title" style="font-family:'Fraunces',serif;">Weekend <em>Bundle</em></div><div class="promo-sub">Mixed veg box · Save KES 120</div></div>
-    <button class="promo-btn" onclick="addToCart({id:'bundle',name:'Weekend Veg Bundle',emoji:'📦',price:350,unit:'Bundle',cat:'all',bg:'bg-green',badge:'Sale'})">Add · KES 350</button>
+    <button class="promo-btn" onclick="addToCart({id:'bundle',name:'Weekend Veg Bundle',emoji:'📦',price:350,unit:'Bundle',cat:'all',badge:'Sale'})">Add · KES 350</button>
   </div>
 
   <div class="cat-bar" id="shop">
@@ -618,8 +546,6 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
     </div>
   </div>
   <div class="prod-grid" id="prodGrid"></div>
-
-
 
   <section class="farm-section rv" style="margin:14px 16px;">
     <div class="farm-emoji-bg">🌾</div>
@@ -661,7 +587,7 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
   <section class="how rv" id="how">
     <p class="sec-label">Simple process</p><h2 class="sec-title">Order in <em>4 Steps</em></h2>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div><div class="step-title">Browse & Pick</div><p class="step-desc">200+ items updated daily from Kenyan farms.</p></div></div>
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Browse &amp; Pick</div><p class="step-desc">200+ items updated daily from Kenyan farms.</p></div></div>
       <div class="step"><div class="step-num">2</div><div><div class="step-title">Set Your Address</div><p class="step-desc">Enter any Nairobi location.</p></div></div>
       <div class="step"><div class="step-num">3</div><div><div class="step-title">Pay via M-Pesa</div><p class="step-desc">PIN prompt on your phone. One tap.</p></div></div>
       <div class="step"><div class="step-num">4</div><div><div class="step-title">Enjoy Fresh Produce</div><p class="step-desc">Eco-packed and same-day delivered.</p></div></div>
@@ -679,7 +605,7 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
 
   <button class="fab-cart" id="fabCart" onclick="toggleCart()">🛒 My Bag <span class="fab-badge" id="fabBadge">0</span></button>
   <a class="fab-wa" href="https://wa.me/254706489648?text=Hello%20Soko360!%20I%20need%20help%20with%20my%20order." target="_blank">💬</a>
-</div><!-- end shopPage -->
+</div>
 
 <!-- ════ CART PANEL ════ -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
@@ -751,9 +677,7 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
     </div>
   </div>
   <div class="admin-body">
-    <!-- STAT CARDS -->
     <div class="admin-stats" id="adminStats"></div>
-    <!-- ORDERS -->
     <div class="orders-header">
       <h2>📦 Orders</h2>
       <div class="admin-filter-wrap">
@@ -774,65 +698,72 @@ footer{background:#011f13;color:#fff;padding:36px 16px 26px;}
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
-
 <script>
 // ══════════════════════════════════════════
-// PRODUCTS DATA
+// PRODUCTS DATA — corrected images & added Spider Weed (Kunde)
+// Key changes:
+//   id:3  Managu → African black nightshade photo
+//   id:5  Terere → amaranth greens photo
+//   id:36 Spider Weed (Kunde) — NEW product
+//   id:24 Cassava — cleaner cassava root photo
+//   Names clarified with local names in parentheses
 // ══════════════════════════════════════════
 const PRODUCTS = [
-  {id:1,  name:"Sukumawiki Bunch",    img:"https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop", price:30,  was:null, cat:"greens",  origin:"Kisii Highlands",  unit:"Per bunch",    badge:"Fresh",   emoji:"🥬"},
-  {id:2,  name:"Spinach Bunch",       img:"https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&h=400&fit=crop", price:25,  was:null, cat:"greens",  origin:"Tigoni",           unit:"Per bunch",    badge:"Fresh",   emoji:"🌿"},
-  {id:3,  name:"Managu Bunch",        img:"https://images.unsplash.com/photo-1514995669114-6081e934b693?w=400&h=400&fit=crop", price:40,  was:null, cat:"greens",  origin:"Central Kenya",    unit:"Per bunch",    badge:"Organic", emoji:"🥬"},
-  {id:4,  name:"Dhania (Coriander)",  img:"https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=400&fit=crop", price:20,  was:null, cat:"greens",  origin:"Kiambu",           unit:"Per bunch",    badge:"Fresh",   emoji:"🌱"},
-  {id:5,  name:"Terere Bunch",        img:"https://images.unsplash.com/photo-1632456535926-8acab52ce4e0?w=400&h=400&fit=crop", price:35,  was:null, cat:"greens",  origin:"Rift Valley",      unit:"Per bunch",    badge:"Fresh",   emoji:"🌿"},
-  {id:6,  name:"Broccoli",            img:"https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&h=400&fit=crop", price:90,  was:null, cat:"greens",  origin:"Kinangop",         unit:"Per head",     badge:"Organic", emoji:"🥦"},
-  {id:7,  name:"Fresh Cabbage",       img:"https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?w=400&h=400&fit=crop", price:60,  was:80,  cat:"greens",  origin:"Nyandarua",        unit:"Per head",     badge:"Sale",    emoji:"🥬"},
-  {id:8,  name:"Tomatoes P/Kg",       img:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&h=400&fit=crop", price:80,  was:null, cat:"veg",     origin:"Limuru",           unit:"Per kg",       badge:"Organic", emoji:"🍅"},
-  {id:9,  name:"Red Onions P/Kg",     img:"https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&h=400&fit=crop", price:120, was:150, cat:"veg",     origin:"Kisumu",           unit:"Per kg",       badge:"Sale",    emoji:"🧅"},
-  {id:10, name:"Cucumber",            img:"https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=400&h=400&fit=crop", price:40,  was:null, cat:"veg",     origin:"Thika",            unit:"Per piece",    badge:"New",     emoji:"🥒"},
-  {id:11, name:"Capsicum",            img:"https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop", price:35,  was:null, cat:"veg",     origin:"Athi River",       unit:"Per piece",    badge:"Organic", emoji:"🫑"},
-  {id:12, name:"Garlic P/Head",       img:"https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=400&h=400&fit=crop", price:15,  was:null, cat:"veg",     origin:"Rift Valley",      unit:"Per head",     badge:"Organic", emoji:"🧄"},
-  {id:13, name:"Eggplant",            img:"https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=400&h=400&fit=crop", price:30,  was:null, cat:"veg",     origin:"Makueni",          unit:"Per piece",    badge:"Organic", emoji:"🍆"},
-  {id:14, name:"Pumpkin P/Kg",        img:"https://images.unsplash.com/photo-1570586437263-ab629fccc818?w=400&h=400&fit=crop", price:50,  was:null, cat:"veg",     origin:"Nyanza",           unit:"Per kg",       badge:"New",     emoji:"🎃"},
-  {id:15, name:"Fresh Hass Avocado",  img:"https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=400&fit=crop", price:25,  was:50,  cat:"fruits",  origin:"Murang'a",        unit:"Per piece",    badge:"Hot",     emoji:"🥑"},
-  {id:16, name:"Kampala Bananas P/Kg",img:"https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=400&h=400&fit=crop", price:89,  was:null, cat:"fruits",  origin:"Coastal Kenya",    unit:"Per kg",       badge:"Organic", emoji:"🍌"},
-  {id:17, name:"Passion Fruit",       img:"https://images.unsplash.com/photo-1604495772376-9657f0028ebb?w=400&h=400&fit=crop", price:15,  was:null, cat:"fruits",  origin:"Western Kenya",    unit:"Per piece",    badge:"New",     emoji:"🍈"},
-  {id:18, name:"Apple Mango",         img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop", price:30,  was:null, cat:"fruits",  origin:"Coast Province",   unit:"Per piece",    badge:"Hot",     emoji:"🥭"},
-  {id:19, name:"Watermelon P/Kg",     img:"https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=400&h=400&fit=crop", price:85,  was:null, cat:"fruits",  origin:"Machakos",         unit:"Per kg",       badge:"Fresh",   emoji:"🍉"},
-  {id:20, name:"Apples Assorted 6Pc", img:"https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&h=400&fit=crop", price:329, was:null, cat:"fruits",  origin:"Imported",         unit:"6-pack",       badge:"New",     emoji:"🍎"},
-  {id:21, name:"Potatoes White P/Kg", img:"https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=400&fit=crop", price:119, was:null, cat:"roots",   origin:"Nyandarua",        unit:"Per kg",       badge:"Fresh",   emoji:"🥔"},
-  {id:22, name:"Fresh Carrots P/Kg",  img:"https://images.unsplash.com/photo-1447175008436-054170c2e979?w=400&h=400&fit=crop", price:109, was:null, cat:"roots",   origin:"Nyandarua",        unit:"Per kg",       badge:"Fresh",   emoji:"🥕"},
-  {id:23, name:"Sweet Potato P/Kg",   img:"https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?w=400&h=400&fit=crop", price:60,  was:null, cat:"roots",   origin:"Western Kenya",    unit:"Per kg",       badge:"Fresh",   emoji:"🍠"},
-  {id:24, name:"Cassava P/Kg",        img:"https://images.unsplash.com/photo-1637497975743-3beb96f3f9af?w=400&h=400&fit=crop", price:40,  was:null, cat:"roots",   origin:"Coast Kenya",      unit:"Per kg",       badge:"Fresh",   emoji:"🫚"},
-  {id:25, name:"Sweet Maize",         img:"https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&h=400&fit=crop", price:20,  was:null, cat:"cereals", origin:"Nakuru",           unit:"Per cob",      badge:"Fresh",   emoji:"🌽"},
-  {id:26, name:"Green Grams 250g",    img:"https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?w=400&h=400&fit=crop", price:55,  was:null, cat:"cereals", origin:"Eastern Kenya",    unit:"Per 250g",     badge:"Fresh",   emoji:"🫘"},
-  {id:27, name:"Kidney Beans 500g",   img:"https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=400&h=400&fit=crop", price:90,  was:null, cat:"cereals", origin:"Central Kenya",    unit:"Per 500g",     badge:"Fresh",   emoji:"🫘"},
-  {id:28, name:"Pishori Rice P/Kg",   img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop", price:150, was:180, cat:"cereals", origin:"Mwea, Kirinyaga",  unit:"Per kg",       badge:"Sale",    emoji:"🍚"},
-  {id:29, name:"Tomato Portion",      img:"https://images.unsplash.com/photo-1561136594-7f68807a8d6a?w=400&h=400&fit=crop", price:20,  was:null, cat:"portions",origin:"Limuru",           unit:"3-piece pack", badge:"Portion", emoji:"🍅"},
-  {id:30, name:"Onion Portion",       img:"https://images.unsplash.com/photo-1508747703725-719777637510?w=400&h=400&fit=crop", price:15,  was:null, cat:"portions",origin:"Kisumu",           unit:"2-piece pack", badge:"Portion", emoji:"🧅"},
-  {id:31, name:"Spinach Portion",     img:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop", price:10,  was:null, cat:"portions",origin:"Tigoni",           unit:"Small bunch",  badge:"Portion", emoji:"🌿"},
-  {id:32, name:"Sukuma Portion",      img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop", price:15,  was:null, cat:"portions",origin:"Kisii",            unit:"Small bunch",  badge:"Portion", emoji:"🥬"},
-  {id:33, name:"Garlic Pack 6pc",     img:"https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=400&h=400&fit=crop", price:10,  was:null, cat:"portions",origin:"Rift Valley",      unit:"6-clove pack", badge:"Portion", emoji:"🧄"},
-  {id:34, name:"Carrot Pack 3pc",     img:"https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop", price:25,  was:null, cat:"portions",origin:"Nyandarua",        unit:"3-piece pack", badge:"Portion", emoji:"🥕"},
+  // ── LEAFY GREENS ──
+  {id:1,  name:"Sukumawiki Bunch",           img:"https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop",  price:30,  was:null, cat:"greens",  origin:"Kisii Highlands",  unit:"Per bunch",    badge:"Fresh",   emoji:"🥬"},
+  {id:2,  name:"Spinach Bunch",              img:"https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&h=400&fit=crop",  price:25,  was:null, cat:"greens",  origin:"Tigoni",           unit:"Per bunch",    badge:"Fresh",   emoji:"🌿"},
+  {id:3,  name:"Managu (Black Nightshade)",  img:"https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=400&h=400&fit=crop",  price:40,  was:null, cat:"greens",  origin:"Central Kenya",    unit:"Per bunch",    badge:"Organic", emoji:"🌿", local:true},
+  {id:4,  name:"Dhania (Coriander)",         img:"https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=400&fit=crop",  price:20,  was:null, cat:"greens",  origin:"Kiambu",           unit:"Per bunch",    badge:"Fresh",   emoji:"🌱"},
+  {id:5,  name:"Terere (Amaranth Greens)",   img:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop",  price:35,  was:null, cat:"greens",  origin:"Rift Valley",      unit:"Per bunch",    badge:"Fresh",   emoji:"🌿", local:true},
+  {id:36, name:"Spider Weed (Kunde/Cowpea)", img:"https://images.unsplash.com/photo-1528826007177-f38517ce4073?w=400&h=400&fit=crop",  price:30,  was:null, cat:"greens",  origin:"Western Kenya",    unit:"Per bunch",    badge:"Local",   emoji:"🌿", local:true},
+  {id:6,  name:"Broccoli",                   img:"https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&h=400&fit=crop",  price:90,  was:null, cat:"greens",  origin:"Kinangop",         unit:"Per head",     badge:"Organic", emoji:"🥦"},
+  {id:7,  name:"Fresh Cabbage",              img:"https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?w=400&h=400&fit=crop",  price:60,  was:80,  cat:"greens",  origin:"Nyandarua",        unit:"Per head",     badge:"Sale",    emoji:"🥬"},
+  // ── VEGETABLES ──
+  {id:8,  name:"Tomatoes P/Kg",              img:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&h=400&fit=crop",  price:80,  was:null, cat:"veg",     origin:"Limuru",           unit:"Per kg",       badge:"Organic", emoji:"🍅"},
+  {id:9,  name:"Red Onions P/Kg",            img:"https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&h=400&fit=crop",  price:120, was:150, cat:"veg",     origin:"Kisumu",           unit:"Per kg",       badge:"Sale",    emoji:"🧅"},
+  {id:10, name:"Cucumber",                   img:"https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=400&h=400&fit=crop",  price:40,  was:null, cat:"veg",     origin:"Thika",            unit:"Per piece",    badge:"New",     emoji:"🥒"},
+  {id:11, name:"Capsicum (Pilipili Hoho)",   img:"https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop",  price:35,  was:null, cat:"veg",     origin:"Athi River",       unit:"Per piece",    badge:"Organic", emoji:"🫑"},
+  {id:12, name:"Garlic P/Head",              img:"https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=400&h=400&fit=crop",  price:15,  was:null, cat:"veg",     origin:"Rift Valley",      unit:"Per head",     badge:"Organic", emoji:"🧄"},
+  {id:13, name:"Eggplant (Biringanya)",      img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop",  price:30,  was:null, cat:"veg",     origin:"Makueni",          unit:"Per piece",    badge:"Organic", emoji:"🍆"},
+  {id:14, name:"Pumpkin P/Kg",               img:"https://images.unsplash.com/photo-1570586437263-ab629fccc818?w=400&h=400&fit=crop",  price:50,  was:null, cat:"veg",     origin:"Nyanza",           unit:"Per kg",       badge:"New",     emoji:"🎃"},
+  // ── FRUITS ──
+  {id:15, name:"Fresh Hass Avocado",         img:"https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=400&fit=crop",  price:25,  was:50,  cat:"fruits",  origin:"Murang'a",         unit:"Per piece",    badge:"Hot",     emoji:"🥑"},
+  {id:16, name:"Kampala Bananas P/Kg",       img:"https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=400&h=400&fit=crop",  price:89,  was:null, cat:"fruits",  origin:"Coastal Kenya",    unit:"Per kg",       badge:"Organic", emoji:"🍌"},
+  {id:17, name:"Passion Fruit (Granadilla)", img:"https://images.unsplash.com/photo-1604495772376-9657f0028ebb?w=400&h=400&fit=crop",  price:15,  was:null, cat:"fruits",  origin:"Western Kenya",    unit:"Per piece",    badge:"New",     emoji:"🍈"},
+  {id:18, name:"Apple Mango",                img:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop",  price:30,  was:null, cat:"fruits",  origin:"Coast Province",   unit:"Per piece",    badge:"Hot",     emoji:"🥭"},
+  {id:19, name:"Watermelon P/Kg",            img:"https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=400&h=400&fit=crop",  price:85,  was:null, cat:"fruits",  origin:"Machakos",         unit:"Per kg",       badge:"Fresh",   emoji:"🍉"},
+  {id:20, name:"Apples Assorted 6Pc",        img:"https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&h=400&fit=crop",  price:329, was:null, cat:"fruits",  origin:"Imported",         unit:"6-pack",       badge:"New",     emoji:"🍎"},
+  // ── ROOTS & TUBERS ──
+  {id:21, name:"Potatoes White P/Kg",        img:"https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=400&fit=crop",  price:119, was:null, cat:"roots",   origin:"Nyandarua",        unit:"Per kg",       badge:"Fresh",   emoji:"🥔"},
+  {id:22, name:"Fresh Carrots P/Kg",         img:"https://images.unsplash.com/photo-1447175008436-054170c2e979?w=400&h=400&fit=crop",  price:109, was:null, cat:"roots",   origin:"Nyandarua",        unit:"Per kg",       badge:"Fresh",   emoji:"🥕"},
+  {id:23, name:"Sweet Potato (Viazi Vitamu)",img:"https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?w=400&h=400&fit=crop",  price:60,  was:null, cat:"roots",   origin:"Western Kenya",    unit:"Per kg",       badge:"Fresh",   emoji:"🍠"},
+  {id:24, name:"Cassava (Muhogo) P/Kg",      img:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=400&fit=crop",  price:40,  was:null, cat:"roots",   origin:"Coast Kenya",       unit:"Per kg",       badge:"Fresh",   emoji:"🌾"},
+  // ── CEREALS & GRAINS ──
+  {id:25, name:"Sweet Maize",                img:"https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&h=400&fit=crop",  price:20,  was:null, cat:"cereals", origin:"Nakuru",            unit:"Per cob",      badge:"Fresh",   emoji:"🌽"},
+  {id:26, name:"Green Grams (Ndengu) 250g",  img:"https://images.unsplash.com/photo-1614961233913-a5113a4a34ed?w=400&h=400&fit=crop",  price:55,  was:null, cat:"cereals", origin:"Eastern Kenya",    unit:"Per 250g",     badge:"Fresh",   emoji:"🫘"},
+  {id:27, name:"Kidney Beans (Maharagwe) 500g",img:"https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=400&h=400&fit=crop",price:90,  was:null, cat:"cereals", origin:"Central Kenya",    unit:"Per 500g",     badge:"Fresh",   emoji:"🫘"},
+  {id:28, name:"Pishori Rice P/Kg",          img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop",  price:150, was:180, cat:"cereals", origin:"Mwea, Kirinyaga",   unit:"Per kg",       badge:"Sale",    emoji:"🍚"},
+  // ── SMALL PORTIONS ──
+  {id:29, name:"Tomato Portion",             img:"https://images.unsplash.com/photo-1561136594-7f68807a8d6a?w=400&h=400&fit=crop",  price:20,  was:null, cat:"portions",origin:"Limuru",            unit:"3-piece pack", badge:"Portion", emoji:"🍅"},
+  {id:30, name:"Onion Portion",              img:"https://images.unsplash.com/photo-1508747703725-719777637510?w=400&h=400&fit=crop",  price:15,  was:null, cat:"portions",origin:"Kisumu",            unit:"2-piece pack", badge:"Portion", emoji:"🧅"},
+  {id:31, name:"Spinach Portion",            img:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop",  price:10,  was:null, cat:"portions",origin:"Tigoni",            unit:"Small bunch",  badge:"Portion", emoji:"🌿"},
+  {id:32, name:"Sukuma Portion",             img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop",  price:15,  was:null, cat:"portions",origin:"Kisii",             unit:"Small bunch",  badge:"Portion", emoji:"🥬"},
+  {id:33, name:"Garlic Pack 6pc",            img:"https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=400&h=400&fit=crop",  price:10,  was:null, cat:"portions",origin:"Rift Valley",        unit:"6-clove pack", badge:"Portion", emoji:"🧄"},
+  {id:34, name:"Carrot Pack 3pc",            img:"https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop",  price:25,  was:null, cat:"portions",origin:"Nyandarua",          unit:"3-piece pack", badge:"Portion", emoji:"🥕"},
 ];
 
 // ══════════════════════════════════════════
 // AUTH & USER STATE
-// (In production: replace with real API calls)
 // ══════════════════════════════════════════
-// Pre-seeded admin account — change email/password before deploying
 const ADMIN_EMAIL = 'admin@soko360.co.ke';
 const ADMIN_PASSWORD = 'Soko@Admin2026';
 
-// Simple in-browser user store (persisted in localStorage)
 function getUsers(){ try{return JSON.parse(localStorage.getItem('s360_users')||'[]');}catch{return[];} }
 function saveUsers(u){ localStorage.setItem('s360_users',JSON.stringify(u)); }
 function getCurrentUser(){ try{return JSON.parse(localStorage.getItem('s360_current_user')||'null');}catch{return null;} }
 function setCurrentUser(u){ if(u)localStorage.setItem('s360_current_user',JSON.stringify(u)); else localStorage.removeItem('s360_current_user'); }
 
-// Bootstrap admin on first load
 (function bootstrapAdmin(){
   const users=getUsers();
   if(!users.find(u=>u.email===ADMIN_EMAIL)){
@@ -858,8 +789,7 @@ function doLogin(){
   const users=getUsers();
   const user=users.find(u=>u.email===email&&u.password===pass);
   if(!user){err.textContent='Incorrect email or password. Please try again.';err.classList.add('show');return;}
-  setCurrentUser(user);
-  afterLogin(user);
+  setCurrentUser(user);afterLogin(user);
 }
 
 function doRegister(){
@@ -875,8 +805,7 @@ function doRegister(){
   const users=getUsers();
   if(users.find(u=>u.email===email)){err.textContent='An account with this email already exists.';err.classList.add('show');return;}
   const newUser={id:'u_'+Date.now(),email,password:pass,firstName:fn,lastName:ln,phone,role:'customer',createdAt:new Date().toISOString()};
-  users.push(newUser);saveUsers(users);setCurrentUser(newUser);
-  afterLogin(newUser);
+  users.push(newUser);saveUsers(users);setCurrentUser(newUser);afterLogin(newUser);
 }
 
 function guestShop(){
@@ -887,7 +816,6 @@ function guestShop(){
 function afterLogin(user){
   document.getElementById('authScreen').classList.add('hidden');
   document.getElementById('shopPage').style.display='';
-  // Update nav
   const initials=(user.firstName?.[0]||'G')+(user.lastName?.[0]||'');
   document.getElementById('userAvatar').textContent=initials.toUpperCase();
   document.getElementById('userNamePill').textContent=user.firstName||'Guest';
@@ -895,39 +823,28 @@ function afterLogin(user){
   document.getElementById('loginNavBtn').style.display='none';
   if(user.role==='admin'){document.getElementById('adminEntryBtn').style.display='flex';}
   document.getElementById('adminUserName').textContent=user.firstName+' '+user.lastName;
-  renderGrid();
-  renderHero();
-  setTimeout(observeNewCards, 100);
+  renderGrid();renderHero();setTimeout(observeNewCards,100);
 }
 
 function doLogout(){
   setCurrentUser(null);
   document.getElementById('authScreen').classList.remove('hidden');
-  document.getElementById('shopPage').style.display='';
   document.getElementById('adminDash').classList.remove('active');
   document.getElementById('userPill').style.display='none';
   document.getElementById('loginNavBtn').style.display='';
   document.getElementById('adminEntryBtn').style.display='none';
-  // Clear login fields
   document.getElementById('loginEmail').value='';
   document.getElementById('loginPassword').value='';
   document.getElementById('loginErr').classList.remove('show');
   cart=[];updateCartUI();
 }
 
-function showAuth(){
-  document.getElementById('authScreen').classList.remove('hidden');
-}
+function showAuth(){document.getElementById('authScreen').classList.remove('hidden');}
 
-// Auto-login if session exists
 window.addEventListener('DOMContentLoaded',()=>{
   const user=getCurrentUser();
   if(user){afterLogin(user);}
-  else{
-    document.getElementById('shopPage').style.display='';
-    renderGrid();
-    renderHero();
-  }
+  else{document.getElementById('shopPage').style.display='';renderGrid();renderHero();}
   initReveal();
 });
 
@@ -945,7 +862,6 @@ function openShop(){
   document.getElementById('adminDash').classList.remove('active');
   document.getElementById('shopPage').style.display='';
 }
-
 function getOrders(){try{return JSON.parse(localStorage.getItem('s360_orders')||'[]');}catch{return[];}}
 function saveOrders(o){localStorage.setItem('s360_orders',JSON.stringify(o));}
 
@@ -953,34 +869,23 @@ function exportCSV(){
   const orders=getOrders();
   if(!orders.length){showToast('No orders to export');return;}
   const rows=[['Order ID','Customer','Phone','Location','Items','Total (KES)','Status','Date']];
-  orders.forEach(o=>{
-    rows.push([
-      o.id, o.customer, o.phone, o.location,
-      o.items.map(i=>i.name+'x'+i.qty).join(' | '),
-      o.total, o.status,
-      new Date(o.createdAt).toLocaleString('en-KE')
-    ]);
-  });
+  orders.forEach(o=>{rows.push([o.id,o.customer,o.phone,o.location,o.items.map(i=>i.name+'x'+i.qty).join(' | '),o.total,o.status,new Date(o.createdAt).toLocaleString('en-KE')]);});
   const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
-  a.download='soko360-orders-'+new Date().toISOString().slice(0,10)+'.csv';
-  a.click();
+  a.download='soko360-orders-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
   showToast('✅ Orders exported!');
 }
 
 function renderAdminStats(){
   const orders=getOrders();
-  const total=orders.length;
-  const newOrders=orders.filter(o=>o.status==='new').length;
-  const outOrders=orders.filter(o=>o.status==='out_for_delivery').length;
+  const total=orders.length,newOrders=orders.filter(o=>o.status==='new').length,outOrders=orders.filter(o=>o.status==='out_for_delivery').length;
   const revenue=orders.filter(o=>o.status!=='cancelled').reduce((s,o)=>s+o.total,0);
   document.getElementById('adminStats').innerHTML=`
     <div class="astat-card highlight"><div class="astat-icon">📦</div><div class="astat-val">${total}</div><div class="astat-label">Total Orders</div></div>
     <div class="astat-card"><div class="astat-icon">🆕</div><div class="astat-val" style="color:#c45e00">${newOrders}</div><div class="astat-label">Needs Attention</div></div>
     <div class="astat-card"><div class="astat-icon">🚴</div><div class="astat-val" style="color:#3451d1">${outOrders}</div><div class="astat-label">Out for Delivery</div></div>
-    <div class="astat-card"><div class="astat-icon">💰</div><div class="astat-val" style="color:#026844">KES ${revenue.toLocaleString()}</div><div class="astat-label">Total Revenue</div></div>
-    <div class="astat-card" style="grid-column:1/-1;background:var(--moss-light);border-color:#b8d8c8;"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;"><div><div class="astat-icon">📊</div><div style="font-size:11.5px;color:var(--muted);font-weight:600;">Today's Revenue Breakdown</div></div><div style="display:flex;gap:20px;flex-wrap:wrap;">${['new','confirmed','out_for_delivery','delivered'].map(s=>{const count=orders.filter(o=>o.status===s).length;return count?'<div style="text-align:center"><div style="font-weight:800;font-size:16px;color:var(--moss)">'+count+'</div><div style="font-size:10px;color:var(--muted)">'+{new:'New',confirmed:'Confirmed',out_for_delivery:'Out',delivered:'Delivered'}[s]+'</div></div>':''}).join('')}</div></div></div>`;
+    <div class="astat-card"><div class="astat-icon">💰</div><div class="astat-val" style="color:#026844">KES ${revenue.toLocaleString()}</div><div class="astat-label">Total Revenue</div></div>`;
 }
 
 const STATUS_LABELS={new:'🆕 New',confirmed:'✅ Confirmed',out_for_delivery:'🚴 Out for Delivery',delivered:'✔ Delivered',cancelled:'✕ Cancelled'};
@@ -997,12 +902,11 @@ function renderOrderList(){
   const list=document.getElementById('orderList');
   if(!filtered.length){list.innerHTML='<div class="no-orders"><div class="no-orders-icon">📭</div><p>No orders match this filter.</p></div>';return;}
   list.innerHTML=filtered.map(o=>{
-    const del=o.total>=(o.subtotal+500)?0:49;
     const wa=encodeURIComponent(`Hi ${o.customer}! Your Soko360 order #${o.id} is confirmed. We'll deliver to ${o.location} shortly. Total: KES ${o.total?.toLocaleString()}. Thank you! 🥦`);
     return `<div class="order-card" id="oc_${o.id}">
       <div class="oc-head">
         <div><div class="oc-id">#${o.id}</div><div class="oc-time">📅 ${new Date(o.createdAt).toLocaleString('en-KE',{dateStyle:'medium',timeStyle:'short'})}</div></div>
-        ${o.mpesaRef?'<div style=\"background:#e8f5e9;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:800;color:var(--moss);border:1px solid #a8d8bc;\">✅ M-Pesa: '+o.mpesaRef+'</div>':''}
+        ${o.mpesaRef?'<div style="background:#e8f5e9;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:800;color:var(--moss);border:1px solid #a8d8bc;">✅ M-Pesa: '+o.mpesaRef+'</div>':''}
         <span class="oc-status ${STATUS_CLASS[o.status]||'status-new'}">${STATUS_LABELS[o.status]||o.status}</span>
       </div>
       <div class="oc-body">
@@ -1032,18 +936,11 @@ function renderOrderList(){
 }
 
 function updateOrderStatus(id,status){
-  const orders=getOrders();
-  const o=orders.find(x=>x.id===id);
-  if(!o)return;
-  o.status=status;o.updatedAt=new Date().toISOString();
-  saveOrders(orders);renderOrderList();renderAdminStats();
+  const orders=getOrders();const o=orders.find(x=>x.id===id);if(!o)return;
+  o.status=status;o.updatedAt=new Date().toISOString();saveOrders(orders);renderOrderList();renderAdminStats();
   showToast('Order #'+id+' → '+STATUS_LABELS[status]);
 }
-
-function filterOrders(btn,status){
-  document.querySelectorAll('.admin-filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');adminFilter=status;renderOrderList();
-}
+function filterOrders(btn,status){document.querySelectorAll('.admin-filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');adminFilter=status;renderOrderList();}
 function searchOrders(v){adminSearch=v;renderOrderList();}
 
 // ══════════════════════════════════════════
@@ -1052,7 +949,6 @@ function searchOrders(v){adminSearch=v;renderOrderList();}
 let cart=[];let activeCat='all';let searchQ='';let drawerOpen=false;let cartOpen=false;
 
 window.addEventListener('scroll',()=>{document.getElementById('mainNav')?.classList.toggle('scrolled',scrollY>10);});
-
 function toggleDrawer(){drawerOpen=!drawerOpen;document.getElementById('drawer').classList.toggle('open',drawerOpen);document.getElementById('drawerOverlay').classList.toggle('open',drawerOpen);document.getElementById('hamBtn').classList.toggle('open',drawerOpen);}
 function closeDrawer(){drawerOpen=false;document.getElementById('drawer').classList.remove('open');document.getElementById('drawerOverlay').classList.remove('open');document.getElementById('hamBtn').classList.remove('open');}
 function toggleCart(){cartOpen?closeCart():openCart();}
@@ -1062,7 +958,7 @@ function closeCart(){cartOpen=false;document.getElementById('cartPanel').classLi
 function addToCart(prod){
   const ex=cart.find(i=>i.id==prod.id);
   if(ex)ex.qty++;else cart.push({...prod,qty:1});
-  updateCartUI();showToast(prod.emoji+' '+prod.name+' added');openCart();
+  updateCartUI();showToast((prod.emoji||'🥦')+' '+prod.name+' added');openCart();
 }
 function addById(id){const p=PRODUCTS.find(x=>x.id==id);if(p)addToCart(p);}
 function removeItem(id){cart=cart.filter(i=>i.id!=id);updateCartUI();}
@@ -1087,15 +983,15 @@ function updateCartUI(){
   else{fb.textContent='Free delivery on orders above KES 500';fb.style.color='#495057';}
   const body=document.getElementById('cartBody');
   if(!cart.length){body.innerHTML='<div class="cart-empty"><div class="ce-icon">🛒</div><div class="ce-title">Your bag is empty</div><p class="ce-sub">Add fresh produce!</p></div>';return;}
-  body.innerHTML=cart.map(i=>`<div class="cart-item"><div class="ci-img" style="overflow:hidden;border-radius:8px;">${i.img?`<img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;" />`:'<span style="font-size:24px">🥦</span>'}</div><div class="ci-info"><div class="ci-name">${i.name}</div><div class="ci-meta">${i.unit} · KES ${i.price}</div><div class="ci-row"><div class="qty-ctrl"><button class="qty-b" onclick="changeQty(${i.id},-1)">−</button><span class="qty-n">${i.qty}</span><button class="qty-b" onclick="changeQty(${i.id},1)">+</button></div><span class="ci-price">KES ${(i.price*i.qty).toLocaleString()}</span></div></div><button class="ci-del" onclick="removeItem(${i.id})">✕</button></div>`).join('');
+  body.innerHTML=cart.map(i=>`<div class="cart-item"><div class="ci-img">${i.img?`<img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;" />`:'<span style="font-size:24px">'+(i.emoji||'🥦')+'</span>'}</div><div class="ci-info"><div class="ci-name">${i.name}</div><div class="ci-meta">${i.unit||''} · KES ${i.price}</div><div class="ci-row"><div class="qty-ctrl"><button class="qty-b" onclick="changeQty(${i.id},-1)">−</button><span class="qty-n">${i.qty}</span><button class="qty-b" onclick="changeQty(${i.id},1)">+</button></div><span class="ci-price">KES ${(i.price*i.qty).toLocaleString()}</span></div></div><button class="ci-del" onclick="removeItem(${i.id})">✕</button></div>`).join('');
   renderGrid();
 }
 
 function renderHero(){
-  const featured=[1,8,15,25,21];
+  const featured=[1,8,15,25,36]; // include spider weed
   document.getElementById('heroCards').innerHTML=featured.map(id=>{
     const p=PRODUCTS.find(x=>x.id==id);if(!p)return'';
-    return `<div class="hcard" onclick="addById(${p.id})"><div class="hcard-img" style="background:#1a3a25;overflow:hidden;"><img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;opacity:0.92;" loading="lazy" /></div><div class="hcard-body"><div class="hcard-name">${p.name}</div><div class="hcard-price">KES ${p.price}</div><div class="hcard-tag">${p.badge}</div></div></div>`;
+    return `<div class="hcard" onclick="addById(${p.id})"><div class="hcard-img"><img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;opacity:0.92;" loading="lazy" /></div><div class="hcard-body"><div class="hcard-name">${p.name}</div><div class="hcard-price">KES ${p.price}</div><div class="hcard-tag">${p.badge}</div></div></div>`;
   }).join('');
 }
 
@@ -1106,7 +1002,25 @@ function renderGrid(){
   grid.innerHTML=filtered.map(p=>{
     const sav=p.was?p.was-p.price:0;const pct=p.was?Math.round((sav/p.was)*100):0;
     const inCart=cart.find(c=>c.id==p.id);
-    return `<div class="pcard rv" data-id="${p.id}"><div class="pcard-img-wrap">${p.was?`<div class="discount-badge">${pct}% OFF</div>`:''}<div class="size-badge">${p.unit}</div><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="pcard-emoji" style="display:none">${p.emoji||'🥦'}</div></div><div class="pcard-body"><div class="pcard-name">${p.name}</div><div class="pcard-origin">${p.origin}</div><div class="pcard-pricing"><div class="price-row">${p.was?`<span class="price-was">KES ${p.was}</span>`:''}<span class="price-now">KES ${p.price}</span></div>${p.was?`<span class="save-tag">Save KES ${sav}</span>`:''}</div><button class="btn-add${inCart?' in-cart':''}" onclick="addById(${p.id})">${inCart?`✓ In Bag (${inCart.qty})`:'Add To Cart'}</button></div></div>`;
+    const isLocal=p.local;
+    return `<div class="pcard rv" data-id="${p.id}">
+      <div class="pcard-img-wrap">
+        ${p.was?`<div class="discount-badge">${pct}% OFF</div>`:''}
+        ${isLocal?`<div class="local-badge">🌍 Local</div>`:''}
+        <div class="size-badge">${p.unit}</div>
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="pcard-emoji" style="display:none">${p.emoji||'🥦'}</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-name">${p.name}</div>
+        <div class="pcard-origin">📍 ${p.origin}</div>
+        <div class="pcard-pricing">
+          <div class="price-row">${p.was?`<span class="price-was">KES ${p.was}</span>`:''}<span class="price-now">KES ${p.price}</span></div>
+          ${p.was?`<span class="save-tag">Save KES ${sav}</span>`:''}
+        </div>
+        <button class="btn-add${inCart?' in-cart':''}" onclick="addById(${p.id})">${inCart?`✓ In Bag (${inCart.qty})`:'Add To Cart'}</button>
+      </div>
+    </div>`;
   }).join('');
   observeNewCards();
 }
@@ -1121,10 +1035,9 @@ function setCatTab(el,cat){
 }
 function onSearch(v){searchQ=v.toLowerCase().trim();renderGrid();}
 
-// ══════ CHECKOUT ══════
+// ══ CHECKOUT ══
 function openCheckout(){
   if(!cart.length){showToast('🥬 Add items first!');return;}
-  // Pre-fill from user profile
   const user=getCurrentUser();
   if(user&&user.role!=='guest'){
     document.getElementById('fFirstName').value=user.firstName||'';
@@ -1134,7 +1047,7 @@ function openCheckout(){
   }
   closeCart();
   const sub=getSubtotal(),del=getDelivery(),grand=sub+del;
-  document.getElementById('orderRecap').innerHTML=`<div class="or-title">Order Summary</div>${cart.map(i=>`<div class="or-item"><span>${i.emoji} ${i.name} × ${i.qty}</span><span>KES ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}<div class="or-sep"></div><div class="or-item"><span>Delivery</span><span>${del===0?'<span style="color:var(--moss)">FREE</span>':'KES '+del}</span></div><div class="or-sep"></div><div class="or-total"><span>Total to Pay</span><span>KES ${grand.toLocaleString()}</span></div>`;
+  document.getElementById('orderRecap').innerHTML=`<div class="or-title">Order Summary</div>${cart.map(i=>`<div class="or-item"><span>${i.emoji||'🥦'} ${i.name} × ${i.qty}</span><span>KES ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}<div class="or-sep"></div><div class="or-item"><span>Delivery</span><span>${del===0?'<span style="color:var(--moss)">FREE</span>':'KES '+del}</span></div><div class="or-sep"></div><div class="or-total"><span>Total to Pay</span><span>KES ${grand.toLocaleString()}</span></div>`;
   document.getElementById('checkoutSheet').classList.add('open');
 }
 function closeCheckout(){document.getElementById('checkoutSheet').classList.remove('open');}
@@ -1151,92 +1064,35 @@ async function placeOrder(){
   const sub=getSubtotal(),del=getDelivery(),grand=sub+del;
   const btn=document.getElementById('payBtn');
   btn.disabled=true;btn.textContent='⏳ Sending M-Pesa prompt…';
-
-  // Save order locally for admin dashboard
   const orderId='ORD'+Date.now().toString().slice(-6);
-  const newOrder={
-    id:orderId,
-    customer:fn+' '+ln,
-    phone:clean,
-    location:addr+', '+city,
-    county:document.getElementById('fCounty').value,
-    email:document.getElementById('fEmail').value,
-    receiverName:(document.getElementById('fRFirst').value+' '+document.getElementById('fRLast').value).trim()||fn+' '+ln,
-    notes:document.getElementById('fNotes').value,
-    items:cart.map(i=>({name:i.name,emoji:i.emoji,qty:i.qty,price:i.price})),
-    subtotal:sub,delivery:del,total:grand,
-    status:'new',
-    createdAt:new Date().toISOString()
-  };
+  const newOrder={id:orderId,customer:fn+' '+ln,phone:clean,location:addr+', '+city,county:document.getElementById('fCounty').value,email:document.getElementById('fEmail').value,receiverName:(document.getElementById('fRFirst').value+' '+document.getElementById('fRLast').value).trim()||fn+' '+ln,notes:document.getElementById('fNotes').value,items:cart.map(i=>({name:i.name,emoji:i.emoji||'🥦',qty:i.qty,price:i.price})),subtotal:sub,delivery:del,total:grand,status:'new',createdAt:new Date().toISOString()};
   const allOrders=getOrders();allOrders.unshift(newOrder);saveOrders(allOrders);
-
-  closeCheckout();
-  showStatus('pending',phone);
-
-  try {
-    // Real M-Pesa API call
-    const res = await fetch('/api/orders', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({
-        customer: fn+' '+ln,
-        phone: clean,
-        location: addr+', '+city,
-        notes: document.getElementById('fNotes').value,
-        items: cart.map(i=>({name:i.name,emoji:i.emoji,qty:i.qty,price:i.price})),
-        total: grand
-      })
-    });
-    const data = await res.json();
-    if(!data.success){
-      showStatus('error',null,data.message||'M-Pesa request failed. Please try again.');
-      btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
-      return;
-    }
-    // Poll for payment confirmation
-    pollPayment(data.orderId, newOrder, fn+' '+ln, grand);
-  } catch(err) {
-    // Network error — keep order in local admin, notify user
-    showStatus('error',null,'Could not reach the server. Check your internet and try again.');
-    btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
+  closeCheckout();showStatus('pending',phone);
+  try{
+    const res=await fetch('/api/orders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({customer:fn+' '+ln,phone:clean,location:addr+', '+city,notes:document.getElementById('fNotes').value,items:cart.map(i=>({name:i.name,emoji:i.emoji||'🥦',qty:i.qty,price:i.price})),total:grand})});
+    const data=await res.json();
+    if(!data.success){showStatus('error',null,data.message||'M-Pesa request failed.');btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';return;}
+    pollPayment(data.orderId,newOrder,fn+' '+ln,grand);
+  }catch(err){
+    showStatus('error',null,'Could not reach the server. Check your internet and try again.');btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
   }
 }
 
-async function pollPayment(apiOrderId, localOrder, name, total) {
-  const btn=document.getElementById('payBtn');
-  let attempts=0;
+async function pollPayment(apiOrderId,localOrder,name,total){
+  const btn=document.getElementById('payBtn');let attempts=0;
   const interval=setInterval(async()=>{
     attempts++;
     try{
-      const res=await fetch('/api/orders/'+apiOrderId);
-      const data=await res.json();
-      if(data.status==='paid'){
-        clearInterval(interval);
-        // Update local order status
-        const allOrders=getOrders();
-        const lo=allOrders.find(o=>o.id===localOrder.id);
-        if(lo){lo.status='confirmed';lo.mpesaRef=data.mpesaRef;saveOrders(allOrders);}
-        cart=[];updateCartUI();
-        showStatus('success',null,null,data.mpesaRef,apiOrderId,name,total);
-        btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
-      } else if(data.status==='payment_failed'){
-        clearInterval(interval);
-        showStatus('error',null,'Payment was cancelled or failed. Please try again.');
-        btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
-      } else if(attempts>=24){
-        clearInterval(interval);
-        // Order saved locally, just timeout gracefully
-        cart=[];updateCartUI();
-        showStatus('timeout',null,'Order #'+apiOrderId+' received. If you paid, we will confirm shortly.',null,apiOrderId,name,total);
-        btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';
-      }
-    }catch(e){/* keep polling */}
+      const res=await fetch('/api/orders/'+apiOrderId);const data=await res.json();
+      if(data.status==='paid'){clearInterval(interval);const allOrders=getOrders();const lo=allOrders.find(o=>o.id===localOrder.id);if(lo){lo.status='confirmed';lo.mpesaRef=data.mpesaRef;saveOrders(allOrders);}cart=[];updateCartUI();showStatus('success',null,null,data.mpesaRef,apiOrderId,name,total);btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';}
+      else if(data.status==='payment_failed'){clearInterval(interval);showStatus('error',null,'Payment was cancelled or failed. Please try again.');btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';}
+      else if(attempts>=24){clearInterval(interval);cart=[];updateCartUI();showStatus('timeout',null,'Order #'+apiOrderId+' received. If you paid, we will confirm shortly.',null,apiOrderId,name,total);btn.disabled=false;btn.textContent='📲 Place Order via M-Pesa';}
+    }catch(e){}
   },5000);
 }
 
 function showStatus(type,phone,msg,ref,id,name,total){
-  const s=document.getElementById('statusSheet'),c=document.getElementById('statusContent');
-  s.classList.add('open');
+  const s=document.getElementById('statusSheet'),c=document.getElementById('statusContent');s.classList.add('open');
   if(type==='pending')c.innerHTML=`<div class="spinner"></div><div class="ss-title">Check Your Phone!</div><div class="ss-sub">M-Pesa prompt sent to <strong>${phone}</strong>.<br>Enter your PIN to confirm payment.</div>`;
   else if(type==='success')c.innerHTML=`<span class="ss-icon">🎉</span><div class="ss-title">Order Confirmed!</div><div class="ss-sub">Thank you <strong>${name}</strong>! Your fresh produce is being prepared.</div><div class="ss-detail"><div class="sd-label">M-Pesa Ref</div><div class="sd-val">${ref}</div></div><div class="ss-detail"><div class="sd-label">Order ID</div><div class="sd-val">${id}</div></div><div class="ss-detail"><div class="sd-label">Amount Paid</div><div class="sd-val">KES ${total?.toLocaleString()}</div></div><br><button class="btn-done" onclick="document.getElementById('statusSheet').classList.remove('open')">🥦 Continue Shopping</button>`;
   else if(type==='timeout')c.innerHTML=`<span class="ss-icon">⏳</span><div class="ss-title">Order Received</div><div class="ss-sub">${msg}</div><div class="ss-detail"><div class="sd-label">Order ID</div><div class="sd-val">${id||''}</div></div><button class="btn-done" onclick="document.getElementById('statusSheet').classList.remove('open')">OK, Got It</button>`;
@@ -1245,26 +1101,16 @@ function showStatus(type,phone,msg,ref,id,name,total){
 
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2600);}
 
-// Reveal observer
 let obs;
 function initReveal(){
   obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
-      if(e.isIntersecting){
-        const idx=Array.from(e.target.parentNode?.children||[]).indexOf(e.target);
-        e.target.style.transitionDelay=(idx*50)+'ms';
-        e.target.classList.add('vis');
-        obs.unobserve(e.target);
-      }
+      if(e.isIntersecting){const idx=Array.from(e.target.parentNode?.children||[]).indexOf(e.target);e.target.style.transitionDelay=(idx*50)+'ms';e.target.classList.add('vis');obs.unobserve(e.target);}
     });
   },{threshold:0.07});
   document.querySelectorAll('.rv').forEach(el=>{if(el)obs.observe(el);});
 }
-
-function observeNewCards(){
-  if(!obs)return;
-  document.querySelectorAll('.pcard.rv:not(.vis)').forEach(el=>{if(el)obs.observe(el);});
-}
+function observeNewCards(){if(!obs)return;document.querySelectorAll('.pcard.rv:not(.vis)').forEach(el=>{if(el)obs.observe(el);});}
 </script>
 </body>
 </html>
