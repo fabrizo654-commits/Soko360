@@ -1,4 +1,4 @@
-# 🥦 Mama Mboga — M-Pesa Ordering System
+#  Mama Mboga — M-Pesa Ordering System
 
 A full-stack fresh produce shop with real M-Pesa STK Push payments.
 
